@@ -96,13 +96,13 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
     // Get base price from service type
     const serviceOption = questions[0].options?.find(
       (o) => o.value === answers.serviceType
-    );
+    ) as { basePrice?: number } | undefined;
     let price = serviceOption?.basePrice || 1000;
 
     // Apply property type multiplier
     const propertyOption = questions[1].options?.find(
       (o) => o.value === answers.propertyType
-    );
+    ) as { multiplier?: number } | undefined;
     price *= propertyOption?.multiplier || 1;
 
     // Apply bedroom multiplier
@@ -112,13 +112,13 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
     // Apply age multiplier
     const ageOption = questions[3].options?.find(
       (o) => o.value === answers.age
-    );
+    ) as { multiplier?: number } | undefined;
     price *= ageOption?.multiplier || 1;
 
     // Apply urgency multiplier
     const urgencyOption = questions[4].options?.find(
       (o) => o.value === answers.urgency
-    );
+    ) as { multiplier?: number } | undefined;
     price *= urgencyOption?.multiplier || 1;
 
     // Return range
