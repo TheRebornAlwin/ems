@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ArrowRight, ArrowLeft, Calculator, Phone } from "lucide-react";
+import { X, ArrowRight, ArrowLeft, Calculator, Phone, Mail } from "lucide-react";
 
 interface QuoteCalculatorProps {
   isOpen: boolean;
@@ -76,6 +76,17 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
 
   const handleAnswer = (value: any) => {
     setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }));
+
+    // Auto-advance for choice questions
+    if (currentQuestion.type === "choice") {
+      setTimeout(() => {
+        if (currentStep < questions.length - 1) {
+          setCurrentStep((prev) => prev + 1);
+        } else {
+          setShowResult(true);
+        }
+      }, 200);
+    }
   };
 
   const nextStep = () => {
@@ -237,23 +248,26 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                   Back
                 </button>
 
-                <button
-                  onClick={nextStep}
-                  disabled={!answers[currentQuestion.id]}
-                  className={`flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
-                    answers[currentQuestion.id]
-                      ? "text-white hover:opacity-90"
-                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  }`}
-                  style={
-                    answers[currentQuestion.id]
-                      ? { background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }
-                      : {}
-                  }
-                >
-                  {currentStep === questions.length - 1 ? "Get Estimate" : "Next"}
-                  <ArrowRight size={18} />
-                </button>
+                {/* Only show Next button for number input questions */}
+                {currentQuestion.type === "number" && (
+                  <button
+                    onClick={nextStep}
+                    disabled={!answers[currentQuestion.id]}
+                    className={`flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
+                      answers[currentQuestion.id]
+                        ? "text-white hover:opacity-90"
+                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
+                    style={
+                      answers[currentQuestion.id]
+                        ? { background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }
+                        : {}
+                    }
+                  >
+                    {currentStep === questions.length - 1 ? "Get Estimate" : "Next"}
+                    <ArrowRight size={18} />
+                  </button>
+                )}
               </div>
             </>
           ) : (
@@ -295,13 +309,22 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                   style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
                 >
                   <Phone size={18} />
-                  Call for Exact Quote: 02922 402640
+                  Call to Discuss: 02922 402640
+                </a>
+
+                <a
+                  href="mailto:info@electro-main.com"
+                  className="flex items-center justify-center gap-2 w-full rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
+                  style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
+                >
+                  <Mail size={18} />
+                  Email Us
                 </a>
 
                 <button
                   onClick={reset}
-                  className="w-full rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
-                  style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
+                  className="w-full rounded-full px-6 py-3 font-semibold transition-all hover:bg-gray-100"
+                  style={{ color: 'var(--text-muted)' }}
                 >
                   Start Over
                 </button>

@@ -32,14 +32,17 @@ export default function Home() {
       <Services />
       <Efficiency />
       <Testimonials />
-      <FinalCTA />
+      <FinalCTA onOpenCalculator={() => setIsCalculatorOpen(true)} />
       <Footer />
 
       {/* Floating Quote Calculator Button */}
       <button
         onClick={() => setIsCalculatorOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 rounded-full px-6 py-4 font-semibold text-white shadow-2xl transition-all hover:scale-105"
-        style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 rounded-full px-4 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl transition-all hover:scale-105"
+        style={{
+          background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+          color: 'var(--luxe-noir)'
+        }}
         id="estimate"
       >
         Get Free Estimate

@@ -13,7 +13,7 @@ const painPoints = [
 
 export function Problem() {
   return (
-    <section className="py-24 px-6" style={{ background: 'var(--canvas-base)' }}>
+    <section className="pt-32 pb-24 px-6" style={{ background: 'var(--canvas-base)' }}>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Text Content */}

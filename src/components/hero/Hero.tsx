@@ -72,7 +72,7 @@ export function Hero() {
               </p>
 
               {/* Main Headline */}
-              <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
+              <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
                 South Wales' Most Trusted{" "}
                 <span className="text-molten-gold">Electrical Experts</span>
               </h1>
@@ -106,38 +106,40 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Trust Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="px-6 pb-12"
-        >
-          <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
-            {trustBadges.map((badge, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 rounded-2xl bg-white/95 px-6 py-5 shadow-lg backdrop-blur-sm"
-              >
-                <div
-                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
-                  style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-                >
-                  <badge.icon size={28} className="text-white" />
-                </div>
-                <div>
-                  <p className="font-bold" style={{ color: 'var(--luxe-noir)' }}>
-                    {badge.title}
-                  </p>
-                  <p className="text-sm" style={{ color: 'var(--luxe-whiskey)' }}>
-                    {badge.subtitle}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
+
+      {/* Trust Badges - Positioned at edge between hero and next section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="absolute left-0 right-0 bottom-0 translate-y-1/2 z-20 px-4 sm:px-6"
+      >
+        <div className="mx-auto grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3">
+          {trustBadges.map((badge, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl bg-white px-4 py-3 sm:px-6 sm:py-5 shadow-xl"
+            >
+              <div
+                className="flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-lg sm:rounded-xl"
+                style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+              >
+                <badge.icon size={20} className="text-white sm:hidden" />
+                <badge.icon size={28} className="text-white hidden sm:block" />
+              </div>
+              <div>
+                <p className="font-bold text-sm sm:text-base" style={{ color: 'var(--luxe-noir)' }}>
+                  {badge.title}
+                </p>
+                <p className="text-xs sm:text-sm" style={{ color: 'var(--luxe-whiskey)' }}>
+                  {badge.subtitle}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

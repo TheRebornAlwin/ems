@@ -42,7 +42,8 @@ export function Benefits() {
             className="text-4xl font-bold md:text-5xl mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            When You Need It Done Right,{" "}
+            When You Need It Done Right,
+            <br />
             <span className="text-molten-gold">You Need It Done Fast</span>
           </h2>
         </motion.div>

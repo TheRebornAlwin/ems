@@ -19,16 +19,16 @@
   --luxe-espresso: #3D1F0D;       /* Deep espresso brown */
   --luxe-whiskey: #5C3A1E;        /* Warm whiskey */
 
-  /* The Gold Spectrum */
-  --gold-24k: #FFD700;            /* Pure 24K gold */
-  --gold-imperial: #D4AF37;       /* Imperial/old gold */
-  --gold-antique: #CFB53B;        /* Antique gold */
-  --gold-harvest: #DA9100;        /* Harvest gold */
+  /* The Gold Spectrum - Toned down for white backgrounds */
+  --gold-24k: #D4A000;            /* Muted gold */
+  --gold-imperial: #B8960F;       /* Imperial/old gold */
+  --gold-antique: #A6891A;        /* Antique gold */
+  --gold-harvest: #C08000;        /* Harvest gold */
 
-  /* Amber Fire */
-  --amber-fire: #FF8C00;          /* Dark orange/amber */
-  --amber-honey: #FFA500;         /* Pure orange/honey */
-  --amber-sunset: #FF7F50;        /* Coral sunset */
+  /* Amber Fire - Toned down */
+  --amber-fire: #D97706;          /* Dark orange/amber */
+  --amber-honey: #D97706;         /* Muted orange/honey */
+  --amber-sunset: #EA580C;        /* Coral sunset */
 
   /* Copper Accents */
   --copper-bright: #D77A3D;       /* Bright copper */
@@ -146,26 +146,7 @@ body {
   color: var(--luxe-noir);
 }
 
-/* ==========================================================================
-   SCROLLBAR STYLING
-   ========================================================================== */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--luxe-charcoal);
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--gold-24k), var(--amber-fire));
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--amber-honey), var(--gold-24k));
-}
+/* Custom scrollbar removed - using default browser scrollbar */
 
 /* ==========================================================================
    SELECTION STYLING

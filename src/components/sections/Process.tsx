@@ -38,8 +38,8 @@ export function Process() {
             className="text-4xl font-bold md:text-5xl"
             style={{ color: 'var(--text-primary)' }}
           >
-            How Working With{" "}
-            <span className="text-molten-gold">ElectroMain</span> Works
+            Our Simple{" "}
+            <span className="text-molten-gold">3-Step Process</span>
           </h2>
         </motion.div>
 
@@ -51,10 +51,10 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-lg transition-all hover:shadow-xl"
+              className="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-lg transition-all hover:shadow-xl"
             >
               {/* Step Image */}
-              <div className="mb-6 overflow-hidden rounded-2xl">
+              <div className="mb-5 overflow-hidden rounded-2xl">
                 <div
                   className="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url('${step.image}')` }}
@@ -63,7 +63,7 @@ export function Process() {
 
               {/* Step Number */}
               <div
-                className="mb-4 text-5xl font-bold italic"
+                className="mb-3 text-4xl font-bold"
                 style={{ color: 'var(--gold-24k)' }}
               >
                 Step {step.number}
@@ -71,14 +71,14 @@ export function Process() {
 
               {/* Title */}
               <h3
-                className="mb-3 text-xl font-bold"
+                className="mb-2 text-lg font-bold"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                 {step.description}
               </p>
 

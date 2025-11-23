@@ -22,7 +22,7 @@ export function Stats() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl font-bold md:text-5xl italic"
+            className="text-4xl font-bold md:text-5xl"
             style={{ color: 'var(--text-primary)' }}
           >
             Why Choose <span className="text-molten-gold">Us?</span>
@@ -40,7 +40,7 @@ export function Stats() {
               className="text-center"
             >
               <div
-                className="text-6xl font-bold mb-2 italic"
+                className="text-5xl sm:text-6xl font-bold mb-2"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {stat.value}
@@ -59,7 +59,7 @@ export function Stats() {
         >
           <Link
             href="#estimate"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 shadow-lg"
             style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
           >
             Get My Free Quote
