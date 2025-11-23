@@ -25,26 +25,24 @@ const trustBadges = [
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background Video/Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0">
-        {/* Replace this with video when ready:
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="h-full w-full object-cover"
-            >
-              <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
-        */}
-        {/* Placeholder Image */}
-        <div
-          className="h-full w-full bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&h=1080&fit=crop&q=80')`,
-          }}
-        />
+        {/* Cloudflare Stream Video */}
+        <div className="absolute inset-0 overflow-hidden">
+          <iframe
+            src="https://customer-kngdsbkxxxbb5ynm.cloudflarestream.com/ebeb9338492ff95d17e24207908b55b0/iframe?poster=https%3A%2F%2Fcustomer-kngdsbkxxxbb5ynm.cloudflarestream.com%2Febeb9338492ff95d17e24207908b55b0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&autoplay=true&muted=true&loop=true&controls=false"
+            loading="lazy"
+            className="absolute top-1/2 left-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+            style={{
+              border: 'none',
+              width: '177.77777778vh', /* 100 * 16/9 */
+              height: '56.25vw', /* 100 * 9/16 */
+              minHeight: '100%',
+              minWidth: '100%',
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+          />
+        </div>
         {/* Dark Overlay with Brand Tint */}
         <div
           className="absolute inset-0"
