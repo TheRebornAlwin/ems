@@ -30,7 +30,7 @@ export function FinalCTA({ onOpenCalculator }: FinalCTAProps) {
           <div className="flex flex-col gap-3 sm:gap-4 justify-center sm:flex-row sm:flex-wrap">
             <button
               onClick={onOpenCalculator}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold transition-all hover:opacity-90"
+              className="btn-luxury inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold"
               style={{
                 background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
                 color: 'var(--luxe-noir)',
@@ -41,7 +41,7 @@ export function FinalCTA({ onOpenCalculator }: FinalCTAProps) {
 
             <a
               href="mailto:info@electro-main.com"
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all hover:bg-white hover:text-[var(--luxe-noir)]"
+              className="btn-luxury inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white"
               style={{ borderColor: 'var(--gold-24k)' }}
             >
               <Mail size={16} className="sm:hidden" />
@@ -51,7 +51,7 @@ export function FinalCTA({ onOpenCalculator }: FinalCTAProps) {
 
             <a
               href="tel:02922402640"
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all hover:bg-white hover:text-[var(--luxe-noir)]"
+              className="btn-luxury inline-flex items-center justify-center gap-2 sm:gap-3 rounded-full border-2 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-semibold text-white"
               style={{ borderColor: 'var(--gold-24k)' }}
             >
               <Phone size={16} className="sm:hidden" />

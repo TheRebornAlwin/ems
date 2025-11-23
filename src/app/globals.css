@@ -19,16 +19,16 @@
   --luxe-espresso: #3D1F0D;       /* Deep espresso brown */
   --luxe-whiskey: #5C3A1E;        /* Warm whiskey */
 
-  /* The Gold Spectrum - Toned down for white backgrounds */
-  --gold-24k: #D4A000;            /* Muted gold */
-  --gold-imperial: #B8960F;       /* Imperial/old gold */
-  --gold-antique: #A6891A;        /* Antique gold */
-  --gold-harvest: #C08000;        /* Harvest gold */
+  /* The Gold Spectrum - Bright clean yellow */
+  --gold-24k: #FFD700;            /* Pure gold yellow */
+  --gold-imperial: #FFC800;       /* Bright gold */
+  --gold-antique: #FFB800;        /* Golden yellow */
+  --gold-harvest: #FFAA00;        /* Deep yellow */
 
-  /* Amber Fire - Toned down */
-  --amber-fire: #D97706;          /* Dark orange/amber */
-  --amber-honey: #D97706;         /* Muted orange/honey */
-  --amber-sunset: #EA580C;        /* Coral sunset */
+  /* Amber Fire - Bright vibrant orange */
+  --amber-fire: #FF8C00;          /* Bright orange */
+  --amber-honey: #FF9500;         /* Vibrant orange */
+  --amber-sunset: #FF7700;        /* Deep orange */
 
   /* Copper Accents */
   --copper-bright: #D77A3D;       /* Bright copper */
@@ -144,6 +144,45 @@ body {
 .btn-outline-gold:hover {
   background: var(--gold-24k);
   color: var(--luxe-noir);
+}
+
+/* ==========================================================================
+   LUXURY BUTTON HOVER ANIMATION
+   ========================================================================== */
+
+.btn-luxury {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.btn-luxury:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(230, 184, 0, 0.35);
+}
+
+.btn-luxury:active {
+  transform: translateY(-1px);
 }
 
 /* Custom scrollbar removed - using default browser scrollbar */

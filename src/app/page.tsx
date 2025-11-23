@@ -38,7 +38,7 @@ export default function Home() {
       {/* Floating Quote Calculator Button */}
       <button
         onClick={() => setIsCalculatorOpen(true)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 rounded-full px-4 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl transition-all hover:scale-105"
+        className="btn-luxury fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 rounded-full px-4 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl"
         style={{
           background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
           color: 'var(--luxe-noir)'

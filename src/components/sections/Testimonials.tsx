@@ -89,6 +89,48 @@ const allTestimonials = [
     text: "Professional, punctual, and thorough. They explained everything clearly and left our home spotless. Would use again without hesitation.",
     image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&q=80",
   },
+  {
+    name: "Mark Phillips",
+    date: "November 2023",
+    rating: 5,
+    text: "Excellent work on our full house rewire. The team was incredibly professional and completed the job ahead of schedule. Very impressed with the quality.",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    name: "Jennifer Roberts",
+    date: "October 2023",
+    rating: 5,
+    text: "Had our consumer unit upgraded and additional sockets installed. Brilliant service from start to finish. Would highly recommend to anyone.",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    name: "Paul Edwards",
+    date: "September 2023",
+    rating: 5,
+    text: "Fantastic job on our EV charger installation. The electrician was knowledgeable and took time to explain everything. Great communication throughout.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    name: "Rachel Green",
+    date: "August 2023",
+    rating: 5,
+    text: "Used them for emergency work when our electrics went down. They came out same day and resolved the issue quickly. Couldn't ask for better service.",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    name: "Chris Mitchell",
+    date: "July 2023",
+    rating: 5,
+    text: "Had all the lights in our new extension installed. The finish is immaculate and exactly what we wanted. Very fair price for excellent work.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80",
+  },
+  {
+    name: "Amanda Wilson",
+    date: "June 2023",
+    rating: 5,
+    text: "From the initial quote to completion, everything was handled professionally. The team left everything spotless. Would definitely use again.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80",
+  },
 ];
 
 function TestimonialCard({ testimonial, index }: { testimonial: typeof allTestimonials[0]; index: number }) {

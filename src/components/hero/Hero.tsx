@@ -23,8 +23,11 @@ const trustBadges = [
 ];
 
 export function Hero() {
+  // Adjust this value to cut more pixels from the bottom (e.g., h-[calc(100vh-100px)] for 100px cut)
+  const heroHeight = "h-[calc(100vh-50px)]"; // Currently cutting 50px from bottom
+
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className={`relative ${heroHeight} overflow-visible`}>
       {/* Background Video with Overlay */}
       <div className="absolute inset-0">
         {/* Cloudflare Stream Video */}
@@ -53,9 +56,9 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-screen flex-col">
+      <div className="relative z-10 flex h-full flex-col">
         {/* Main Hero Content */}
-        <div className="flex flex-1 items-center px-6 pt-32 pb-20">
+        <div className="flex flex-1 items-center px-6 pt-32 pb-32">
           <div className="mx-auto w-full max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -86,7 +89,7 @@ export function Hero() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   href="#estimate"
-                  className="inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-8 py-4 text-base font-semibold transition-all hover:bg-transparent hover:text-white"
+                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-8 py-4 text-base font-semibold"
                   style={{ color: 'var(--luxe-noir)' }}
                 >
                   <FileText size={20} />
@@ -95,7 +98,7 @@ export function Hero() {
 
                 <a
                   href="tel:02922402640"
-                  className="inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90"
+                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base font-semibold text-white"
                   style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
                 >
                   <Phone size={20} />
@@ -108,12 +111,17 @@ export function Hero() {
 
       </div>
 
-      {/* Trust Badges - Positioned at edge between hero and next section */}
+      {/* Trust Badges - Positioned to overlap hero and next section
+          ADJUSTMENT: Change the 'bottom' value to shift cards up/down
+          - bottom-[-10px] shifts cards down 10px from current position
+          - bottom-[-20px] shifts cards down 20px
+          - bottom-[10px] shifts cards up 10px
+          The translate-y-1/2 makes them overlap 50% into the next section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute left-0 right-0 bottom-0 translate-y-1/2 z-20 px-4 sm:px-6"
+        className="absolute left-0 right-0 bottom-[-10px] translate-y-1/2 z-20 px-4 sm:px-6"
       >
         <div className="mx-auto grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3">
           {trustBadges.map((badge, i) => (
