@@ -121,7 +121,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute left-0 right-0 bottom-[-30px] translate-y-1/2 z-20 px-4 sm:px-6"
+        className="absolute left-0 right-0 bottom-[-60px] translate-y-1/2 z-20 px-4 sm:px-6"
       >
         <div className="mx-auto grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3">
           {trustBadges.map((badge, i) => (
