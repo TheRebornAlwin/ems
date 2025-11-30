@@ -29,7 +29,46 @@ export function Stats() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3 mb-12">
+        {/* Mobile: all on one line with numbers centered, labels centered below */}
+        <div className="md:hidden mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <div className="flex justify-center gap-8 mb-2">
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className="text-3xl font-bold"
+                  style={{ color: 'var(--text-primary)' }}
+                >
+                  {stat.value}
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-center gap-8">
+              {stats.map((stat, i) => (
+                <p
+                  key={i}
+                  className="text-xs text-center"
+                  style={{
+                    color: 'var(--text-secondary)',
+                    maxWidth: '80px',
+                    marginLeft: i === 0 || i === 1 ? '4px' : '0'
+                  }}
+                >
+                  {stat.label}
+                </p>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Desktop: original grid layout */}
+        <div className="hidden md:grid gap-8 md:grid-cols-3 mb-12">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -59,8 +98,11 @@ export function Stats() {
         >
           <Link
             href="#estimate"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 shadow-lg"
-            style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90 shadow-lg"
+            style={{
+              background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+              color: 'var(--luxe-noir)'
+            }}
           >
             Get My Free Quote
             <ArrowRight size={18} />

@@ -66,6 +66,7 @@ body {
   background: var(--canvas-base);
   color: var(--text-primary);
   overflow-x: hidden;
+  position: relative;
 }
 
 /* ==========================================================================
@@ -178,7 +179,7 @@ body {
 
 .btn-luxury:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(230, 184, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(230, 184, 0, 0.35);
 }
 
 .btn-luxury:active {

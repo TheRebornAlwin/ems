@@ -23,8 +23,8 @@ const trustBadges = [
 ];
 
 export function Hero() {
-  // Adjust this value to cut more pixels from the bottom (e.g., h-[calc(100vh-100px)] for 100px cut)
-  const heroHeight = "h-[calc(100vh-50px)]"; // Currently cutting 50px from bottom
+  // Mobile: full vh, Desktop: cut 50px from bottom
+  const heroHeight = "h-screen md:h-[calc(100vh-50px)]";
 
   return (
     <section id="home" className={`relative ${heroHeight} overflow-visible`}>
@@ -64,32 +64,32 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-3xl"
+              className="max-w-3xl text-center md:text-left"
             >
               {/* Eyebrow */}
               <p
-                className="mb-4 text-lg font-medium italic"
+                className="mb-4 text-base sm:text-lg font-medium italic"
                 style={{ color: 'var(--gold-24k)' }}
               >
                 Quality Work Done Right
               </p>
 
               {/* Main Headline */}
-              <h1 className="mb-6 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="mb-6 text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
                 South Wales' Most Trusted{" "}
                 <span className="text-molten-gold">Electrical Experts</span>
               </h1>
 
-              {/* Subheadline */}
-              <p className="mb-10 text-xl text-white/80">
+              {/* Subheadline - responsive font size */}
+              <p className="mb-10 text-base sm:text-lg md:text-xl text-white/80">
                 Get Your Free Quote Within The Hour
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center md:justify-start">
                 <Link
                   href="#estimate"
-                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-8 py-4 text-base font-semibold"
+                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold w-auto mx-auto md:mx-0"
                   style={{ color: 'var(--luxe-noir)' }}
                 >
                   <FileText size={20} />
@@ -98,11 +98,14 @@ export function Hero() {
 
                 <a
                   href="tel:02922402640"
-                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full px-8 py-4 text-base font-semibold text-white"
-                  style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold w-auto mx-auto md:mx-0"
+                  style={{
+                    background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+                    color: 'var(--luxe-noir)'
+                  }}
                 >
                   <Phone size={20} />
-                  02922 402640
+                  Call Us
                 </a>
               </div>
             </motion.div>
@@ -111,17 +114,12 @@ export function Hero() {
 
       </div>
 
-      {/* Trust Badges - Positioned to overlap hero and next section
-          ADJUSTMENT: Change the 'bottom' value to shift cards up/down
-          - bottom-[-10px] shifts cards down 10px from current position
-          - bottom-[-20px] shifts cards down 20px
-          - bottom-[10px] shifts cards up 10px
-          The translate-y-1/2 makes them overlap 50% into the next section */}
+      {/* Trust Badges - Hidden on mobile, shown on desktop overlapping sections */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="absolute left-0 right-0 bottom-[-60px] translate-y-1/2 z-20 px-4 sm:px-6"
+        className="hidden md:block absolute left-0 right-0 bottom-[-50px] translate-y-1/2 z-20 px-4 sm:px-6"
       >
         <div className="mx-auto grid max-w-5xl gap-3 sm:gap-4 md:grid-cols-3">
           {trustBadges.map((badge, i) => (
@@ -130,17 +128,16 @@ export function Hero() {
               className="flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl bg-white px-4 py-3 sm:px-6 sm:py-5 shadow-xl"
             >
               <div
-                className="flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-lg sm:rounded-xl"
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl"
                 style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
               >
-                <badge.icon size={20} className="text-white sm:hidden" />
-                <badge.icon size={28} className="text-white hidden sm:block" />
+                <badge.icon size={28} style={{ color: 'var(--luxe-noir)' }} />
               </div>
               <div>
-                <p className="font-bold text-sm sm:text-base" style={{ color: 'var(--luxe-noir)' }}>
+                <p className="font-bold text-base" style={{ color: 'var(--luxe-noir)' }}>
                   {badge.title}
                 </p>
-                <p className="text-xs sm:text-sm" style={{ color: 'var(--luxe-whiskey)' }}>
+                <p className="text-sm" style={{ color: 'var(--luxe-whiskey)' }}>
                   {badge.subtitle}
                 </p>
               </div>

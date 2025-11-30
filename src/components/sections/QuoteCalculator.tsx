@@ -298,9 +298,59 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                 £{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}
               </div>
 
-              <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
+              <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
                 *Final price may vary based on specific requirements
               </p>
+
+              {/* Competitor Pricing Comparison */}
+              <div className="mb-8 p-6 rounded-2xl" style={{ background: 'var(--canvas-cream)' }}>
+                <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+                  Why Choose ElectroMain?
+                </h4>
+
+                <div className="space-y-3 text-left">
+                  {/* ElectroMain */}
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div
+                        className="h-5 w-5 rounded-full flex items-center justify-center"
+                        style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                      >
+                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                        ElectroMain
+                      </p>
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                        <strong>£{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}</strong> all-inclusive. No hidden fees, no surprises. Includes materials, labor, certification, and 5-year guarantee.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Typical Competitors */}
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="h-5 w-5 rounded-full bg-red-100 flex items-center justify-center">
+                        <svg className="h-3 w-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                        Typical Competitors
+                      </p>
+                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                        Quote <strong>£{Math.round(calculateEstimate().low * 0.8).toLocaleString()}</strong>, then add: "site visit fees" (+£150), "materials markup" (+20%), "unexpected complications" (+£500+), "certification fee" (+£200). <strong>Final cost often 30-50% higher than quoted.</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="space-y-3">
                 <a

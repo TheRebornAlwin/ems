@@ -7,32 +7,32 @@ const clientTypes = [
   {
     icon: Home,
     label: "Homeowners",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60iMFaHgGBMDoNa9vqeyzZCf5r4PXGYKn6tTU1"
   },
   {
     icon: Building2,
     label: "Landlords",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Kdm3Iw8pEAjeMQOGTb9VvPHucf4Cods1yFk6"
   },
   {
     icon: Briefcase,
     label: "Property Managers",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo609iPdL0mkOo60mSgwsLubYaVHUeZBvyD9TdWx"
   },
   {
     icon: Users,
     label: "General Contractors",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60gHrL3xZV8TSw3Eq65OlbXHWjfmkQ9uxopDJr"
   },
   {
     icon: Store,
     label: "Business Owners",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60vd15rezWSA8zgZpmajMcw2Pl7b5uohUO30H9"
   },
   {
     icon: HardHat,
     label: "Developers",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=300&fit=crop&q=80"
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60uB3X7XOHD0zOJ43Z2VpmkjTA5CBWlfQGweb6"
   },
 ];
 
@@ -58,7 +58,7 @@ export function WhoWeServe() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
           {clientTypes.map((client, i) => (
             <motion.div
               key={i}
@@ -66,30 +66,55 @@ export function WhoWeServe() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group flex flex-col items-center gap-3 p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow"
+              className="group"
             >
-              {/* Image */}
-              <div className="w-full aspect-video rounded-xl overflow-hidden">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url('${client.image}')` }}
-                />
+              {/* Desktop view - card with white background */}
+              <div className="hidden md:flex flex-col items-center gap-3 p-4 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow">
+                {/* Image */}
+                <div className="w-full aspect-video rounded-xl overflow-hidden">
+                  <div
+                    className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${client.image}')` }}
+                  />
+                </div>
+
+                {/* Icon and Label */}
+                <div className="flex items-center gap-2">
+                  <div
+                    className="flex h-8 w-8 items-center justify-center rounded-lg shadow-sm"
+                    style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                  >
+                    <client.icon size={16} style={{ color: 'var(--luxe-noir)' }} />
+                  </div>
+                  <p
+                    className="text-sm md:text-base font-semibold"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    {client.label}
+                  </p>
+                </div>
               </div>
 
-              {/* Icon and Label */}
-              <div className="flex items-center gap-2">
+              {/* Mobile view - image with attached label, single column */}
+              <div className="md:hidden relative max-w-md mx-auto">
+                {/* Image */}
+                <div className="w-full aspect-video rounded-xl overflow-hidden">
+                  <div
+                    className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url('${client.image}')` }}
+                  />
+                </div>
+
+                {/* Attached label */}
                 <div
-                  className="flex h-8 w-8 items-center justify-center rounded-lg shadow-sm"
+                  className="relative -mt-3 mx-3 px-4 py-2 rounded-lg shadow-md flex items-center justify-center gap-2"
                   style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
                 >
-                  <client.icon size={16} className="text-white" />
+                  <client.icon size={16} style={{ color: 'var(--luxe-noir)' }} />
+                  <p className="text-base font-semibold" style={{ color: 'var(--luxe-noir)' }}>
+                    {client.label}
+                  </p>
                 </div>
-                <p
-                  className="text-sm md:text-base font-semibold"
-                  style={{ color: 'var(--text-primary)' }}
-                >
-                  {client.label}
-                </p>
               </div>
             </motion.div>
           ))}

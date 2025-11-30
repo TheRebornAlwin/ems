@@ -16,18 +16,42 @@ export function Priority() {
     <section className="py-24 px-6" style={{ background: 'var(--canvas-base)' }}>
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Image - shown first on mobile, first on desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative order-1"
+          >
+            <div className="overflow-hidden rounded-3xl">
+              <div
+                className="aspect-[4/3] w-full bg-cover bg-center"
+                style={{
+                  backgroundImage: `url('https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60YGz7T8bFJWghNpkz60GSmELv43BZaxPTbOY9')`,
+                }}
+              />
+            </div>
+            {/* Decorative accent */}
+            <div
+              className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl -z-10"
+              style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+            />
+          </motion.div>
+
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-center lg:text-left order-2"
           >
             <h2
-              className="text-4xl font-bold leading-tight md:text-5xl mb-6"
+              className="text-3xl font-bold leading-tight md:text-5xl mb-6"
               style={{ color: 'var(--text-primary)' }}
             >
-              Your Home is{" "}
+              Your Home is<br className="md:hidden" />{" "}
               <span className="text-molten-gold">Our Priority</span>
             </h2>
 
@@ -45,7 +69,7 @@ export function Priority() {
               style={{ color: 'var(--text-secondary)' }}
             >
               When your electrical system needs attention, you need it handled quickly, cleanly, and
-              correctly — the first time. That's exactly what we deliver.
+              correctly the first time. That's exactly what we deliver.
             </p>
 
             <p
@@ -55,7 +79,7 @@ export function Priority() {
               With us, you can expect:
             </p>
 
-            <div className="space-y-3 mb-10">
+            <div className="space-y-3 mb-10 max-w-xl mx-auto lg:mx-0">
               {expectations.map((item, i) => (
                 <motion.div
                   key={i}
@@ -63,13 +87,13 @@ export function Priority() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-center gap-3"
+                  className="flex items-center gap-3 text-left"
                 >
                   <div
                     className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
                     style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
                   >
-                    <Check size={14} className="text-white" />
+                    <Check size={14} style={{ color: 'var(--luxe-noir)' }} />
                   </div>
                   <p style={{ color: 'var(--text-secondary)' }}>{item}</p>
                 </motion.div>
@@ -84,36 +108,16 @@ export function Priority() {
             </p>
 
             <Link
-              href="#about"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+              href="/about"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
+              style={{
+                background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+                color: 'var(--luxe-noir)'
+              }}
             >
               Get to Know Us
               <ArrowRight size={18} />
             </Link>
-          </motion.div>
-
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="overflow-hidden rounded-3xl">
-              <div
-                className="aspect-[4/3] w-full bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=600&fit=crop&q=80')`,
-                }}
-              />
-            </div>
-            {/* Decorative accent */}
-            <div
-              className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl -z-10"
-              style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-            />
           </motion.div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const services = [
   {
     title: "Electrical Services",
     items: ["Full rewires", "Consumer units", "Fault finding", "Testing & inspection"],
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&h=600&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60t8SiBDLF5A910T6eXYULNah2yOEodiZrxz7J",
   },
   {
     title: "Plumbing Services",
@@ -18,7 +18,7 @@ const services = [
   {
     title: "Heating Services",
     items: ["Central heating", "Underfloor heating", "Heat pumps", "Smart thermostats"],
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&h=600&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60EJiO8YTzmkqQweVdh9cnL2vfjKiTGDugRSaX",
   },
   {
     title: "EV Chargers",
@@ -28,12 +28,12 @@ const services = [
   {
     title: "Fire Alarms & CCTV",
     items: ["System design", "Installation", "Maintenance", "Monitoring"],
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=600&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60PPqIhQwWZl4eY2dwOTHEaNFMLx7ByuziDjQs",
   },
   {
     title: "Facilities Maintenance",
     items: ["Planned maintenance", "Emergency callouts", "Compliance testing", "Building management"],
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=600&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60bVOie1FfGHBJLDvIR7wkdyZxNtrq1MXp4C38",
   },
 ];
 
@@ -82,7 +82,7 @@ export function Services() {
               />
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-center md:text-left">
                 <h3
                   className="text-2xl font-bold mb-4"
                   style={{ color: 'var(--gold-24k)' }}
@@ -91,7 +91,7 @@ export function Services() {
                 </h3>
                 <ul className="space-y-2">
                   {service.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-2 text-white/90">
+                    <li key={j} className="flex items-center justify-center md:justify-start gap-2 text-white/90">
                       <div
                         className="h-1.5 w-1.5 rounded-full"
                         style={{ background: 'var(--gold-24k)' }}
@@ -120,10 +120,13 @@ export function Services() {
         >
           <Link
             href="#estimate"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90"
-            style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+            className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
+            style={{
+              background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+              color: 'var(--luxe-noir)'
+            }}
           >
-            View All Services
+            Get Your Free Estimate
             <ArrowRight size={18} />
           </Link>
         </motion.div>

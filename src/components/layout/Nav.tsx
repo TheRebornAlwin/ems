@@ -3,15 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, Phone, X, Menu } from "lucide-react";
+import { Phone, X, Menu } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#areas", label: "Service Areas" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "#reviews", label: "Reviews" },
-  { href: "#gallery", label: "Gallery" },
 ];
 
 export function Nav() {
@@ -28,9 +27,13 @@ export function Nav() {
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full" style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}>
-              <Zap size={20} className="text-white sm:hidden" fill="white" />
-              <Zap size={24} className="text-white hidden sm:block" fill="white" />
+            <div className="relative h-10 w-10 sm:h-12 sm:w-12">
+              <Image
+                src="https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD"
+                alt="ElectroMain Logo"
+                fill
+                className="object-contain"
+              />
             </div>
             <span className="text-lg sm:text-xl font-bold text-white">ElectroMain</span>
           </Link>
@@ -51,7 +54,8 @@ export function Nav() {
           {/* CTA Button */}
           <Link
             href="#estimate"
-            className="hidden rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-[var(--luxe-noir)] lg:block"
+            className="btn-luxury hidden rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white lg:block"
+            style={{ color: 'var(--luxe-noir)' }}
           >
             Free Estimate
           </Link>
@@ -79,8 +83,13 @@ export function Nav() {
               {/* Header */}
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full" style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}>
-                    <Zap size={20} className="text-white" fill="white" />
+                  <div className="relative h-10 w-10">
+                    <Image
+                      src="https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD"
+                      alt="ElectroMain Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <span className="text-lg font-bold text-white">ElectroMain</span>
                 </Link>
@@ -94,7 +103,7 @@ export function Nav() {
               </div>
 
               {/* Navigation Links */}
-              <div className="flex flex-col gap-4 mt-12">
+              <div className="flex flex-col gap-3 mt-12">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.href}
@@ -105,7 +114,7 @@ export function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block text-2xl font-semibold text-white py-2"
+                      className="block text-xl font-semibold text-white py-2"
                     >
                       {link.label}
                     </Link>
@@ -114,19 +123,22 @@ export function Nav() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="mt-auto mb-8 space-y-4">
+              <div className="mt-auto mb-8 space-y-4 flex flex-col items-center">
                 <Link
                   href="#estimate"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-3 w-full rounded-full px-6 py-4 text-base font-semibold text-white transition-all"
-                  style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                  className="flex items-center justify-center gap-3 w-auto rounded-full px-8 py-4 text-base font-semibold transition-all"
+                  style={{
+                    background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+                    color: 'var(--luxe-noir)'
+                  }}
                 >
                   Get Free Estimate
                 </Link>
 
                 <a
                   href="tel:02922402640"
-                  className="flex items-center justify-center gap-3 w-full rounded-full border-2 border-white/30 px-6 py-4 text-base font-semibold text-white"
+                  className="flex items-center justify-center gap-3 w-auto rounded-full border-2 border-white/30 px-8 py-4 text-base font-semibold text-white"
                 >
                   <Phone size={18} />
                   02922 402640

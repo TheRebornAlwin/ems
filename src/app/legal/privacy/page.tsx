@@ -35,7 +35,7 @@ export default function PrivacyPolicy() {
 
             <div className="prose prose-lg max-w-none" style={{ color: 'var(--text-secondary)' }}>
               <p className="text-sm mb-8" style={{ color: 'var(--text-muted)' }}>
-                Last updated: November 2024
+                Last updated: December 2025
               </p>
 
               <section className="mb-8">

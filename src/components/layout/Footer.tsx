@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Zap, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const footerLinks = {
   services: [
@@ -9,11 +10,13 @@ const footerLinks = {
     { label: "Plumbing Services", href: "#services" },
     { label: "Heating Services", href: "#services" },
     { label: "EV Chargers", href: "#services" },
+    { label: "Fire Systems & CCTV", href: "#services" },
+    { label: "Facilities Maintenance", href: "#services" },
   ],
   company: [
-    { label: "About Us", href: "#about" },
+    { label: "About Us", href: "/about" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Reviews", href: "#reviews" },
-    { label: "Service Areas", href: "#areas" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/legal/privacy" },
@@ -26,22 +29,24 @@ export function Footer() {
   return (
     <footer style={{ background: '#000000' }}>
       <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 text-center md:text-left md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div
-                className="flex h-10 w-10 items-center justify-center rounded-full"
-                style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-              >
-                <Zap size={20} className="text-white" fill="white" />
+              <div className="relative h-10 w-10">
+                <Image
+                  src="https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD"
+                  alt="ElectroMain Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-lg font-bold text-white">ElectroMain</span>
             </Link>
             <p className="text-white/50 text-sm mb-4">
               South Wales' trusted electrical specialists.
             </p>
-            <div className="space-y-2">
+            <div className="space-y-2 flex flex-col items-center md:items-start">
               <a
                 href="tel:02922402640"
                 className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
@@ -64,7 +69,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-semibold text-sm mb-3">Services</h4>
             <ul className="space-y-1.5">
               {footerLinks.services.map((link) => (
@@ -81,7 +86,7 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-semibold text-sm mb-3">Company</h4>
             <ul className="space-y-1.5">
               {footerLinks.company.map((link) => (
@@ -98,7 +103,7 @@ export function Footer() {
           </div>
 
           {/* Legal */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-semibold text-sm mb-3">Legal</h4>
             <ul className="space-y-1.5">
               {footerLinks.legal.map((link) => (

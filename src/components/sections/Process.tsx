@@ -6,20 +6,20 @@ const steps = [
   {
     number: "1",
     title: "Request Your Free Quote",
-    description: "Send us photos or videos of your project. Explain what you need — we'll handle the rest.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&q=80",
+    description: "Send us photos or videos of your project. Explain what you need and we'll handle the rest.",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60faANKp6O7G2NiKv0Hn8SPa6RsEQeXwfhtd1q",
   },
   {
     number: "2",
     title: "Get Your Personalised Proposal",
     description: "Receive a detailed, transparent quote within hours. No hidden fees, no surprises.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TgR4O1mjcPN9SbhB7l5xKRsGCdfQkI4iEoXz",
   },
   {
     number: "3",
     title: "Book Your Service",
     description: "Choose a date that works for you. We'll arrive on time and get the job done right.",
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop&q=80",
+    image: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Eef4CATzmkqQweVdh9cnL2vfjKiTGDugRSaX",
   },
 ];
 
@@ -38,8 +38,8 @@ export function Process() {
             className="text-4xl font-bold md:text-5xl"
             style={{ color: 'var(--text-primary)' }}
           >
-            Our Simple{" "}
-            <span className="text-molten-gold">3-Step Process</span>
+            Our Simple<br className="md:hidden" />
+            {" "}<span className="text-molten-gold">3-Step Process</span>
           </h2>
         </motion.div>
 
@@ -51,7 +51,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-lg transition-all hover:shadow-xl"
+              className="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-lg transition-all hover:shadow-xl text-center"
             >
               {/* Step Image */}
               <div className="mb-5 overflow-hidden rounded-2xl">

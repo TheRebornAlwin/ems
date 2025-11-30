@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   title: "ElectroMain | Electrical Craftsmanship for Luxury Homes",
   description:
     "From discreet lighting design to EV chargers and full rewires, ElectroMain delivers immaculate electrical work for luxury homes. NICEIC certified, 5-year warranty, transparent pricing.",
+  icons: {
+    icon: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD",
+    shortcut: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD",
+    apple: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60FmTLuoPPqBu1Ck3sFtU0nNXgLi9Y7TbyjhxD",
+  },
   openGraph: {
     title: "ElectroMain | Electrical Craftsmanship for Luxury Homes",
     description:

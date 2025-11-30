@@ -11,6 +11,10 @@ import { Process } from "@/components/sections/Process";
 import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
 import { Efficiency } from "@/components/sections/Efficiency";
+import { RewireDiagnostic } from "@/components/sections/RewireDiagnostic";
+import { AboutPreview } from "@/components/sections/AboutPreview";
+import { Gallery } from "@/components/sections/Gallery";
+import { VideoShowcase } from "@/components/sections/VideoShowcase";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { QuoteCalculator } from "@/components/sections/QuoteCalculator";
@@ -23,14 +27,18 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <VideoShowcase />
+      <Gallery />
       <Problem />
       <Benefits />
       <Priority />
-      <WhoWeServe />
       <Process />
       <Stats />
-      <Services />
       <Efficiency />
+      <RewireDiagnostic />
+      <AboutPreview />
+      <Services />
+      <WhoWeServe />
       <Testimonials />
       <FinalCTA onOpenCalculator={() => setIsCalculatorOpen(true)} />
       <Footer />
@@ -38,10 +46,14 @@ export default function Home() {
       {/* Floating Quote Calculator Button */}
       <button
         onClick={() => setIsCalculatorOpen(true)}
-        className="btn-luxury fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 rounded-full px-4 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl"
+        className="btn-luxury flex items-center gap-2 rounded-full px-4 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl"
         style={{
           background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
-          color: 'var(--luxe-noir)'
+          color: 'var(--luxe-noir)',
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          zIndex: 9999
         }}
         id="estimate"
       >

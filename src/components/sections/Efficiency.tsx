@@ -33,7 +33,7 @@ export function Efficiency() {
             Electrical problems are never convenient, but we do everything possible to make
             the process smooth and stress-free. That's why we pride ourselves on being the
             most efficient electrical team in South Wales. We work quickly, communicate clearly,
-            and get the job done right — so you can get back to enjoying your home.
+            and get the job done right, so you can get back to enjoying your home.
           </p>
         </motion.div>
       </div>

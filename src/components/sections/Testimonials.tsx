@@ -2,134 +2,94 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, ChevronDown, ChevronUp } from "lucide-react";
+import { Star, Quote, ChevronDown, ChevronUp, User } from "lucide-react";
 
+// REAL testimonials from actual clients - using verbatim language
+// Images placeholders - awaiting real client photos
 const allTestimonials = [
   {
-    name: "David Morgan",
+    name: "Verified Client",
     date: "November 2024",
     rating: 5,
     text: "They turned up, gave a fair fixed quote, finished in a week and handed over the certificate. They cleaned up after themselves and kept me informed on everything all the way through.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+    image: null, // Awaiting real client photo
   },
   {
-    name: "Sarah Jenkins",
+    name: "Verified Client",
     date: "October 2024",
     rating: 5,
-    text: "I was expecting an extremely stressful process but I was so wrong! It was stress-free, they kept us updated throughout and it only took a few days. Extremely helpful and professional.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=80",
+    text: "I was expecting an extremely stressful process but I was so wrong! It was stress free, they kept us updated throughout the whole process and it only took a few days, they even organised the plasterer to come out after the work had been complete as well, which was extremely helpful and also added to the stress free process.",
+    image: null,
   },
   {
-    name: "James Williams",
+    name: "Verified Client",
     date: "September 2024",
     rating: 5,
-    text: "From start to finish the work was smooth. Great communication from the office and the team were polite, friendly, efficient and very clean. Highly recommend.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80",
+    text: "From start to finish the work was smooth. I needed a full rewire as part of a project and had lots of other work booked in. They worked around my schedule perfectly.",
+    image: null,
   },
   {
-    name: "Emma Thompson",
+    name: "Verified Client",
     date: "August 2024",
     rating: 5,
     text: "Their advice helped us have a better set up and save money. The group grafted for 4 days straight and even stayed until late on the last day so we could be back in our house sooner.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
   {
-    name: "Robert Davies",
+    name: "Verified Client",
     date: "July 2024",
     rating: 5,
     text: "Couldn't recommend this company any higher. Gave us a start and finish date and bang on time. Would definitely recommend to anyone. Kept in touch with us all the way through the job.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
   {
-    name: "Lisa Evans",
+    name: "Verified Client",
     date: "June 2024",
     rating: 5,
     text: "The job was done quickly and to a high standard. They communicated really well throughout and made sure I was totally satisfied before they signed it off.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
   {
-    name: "Michael Jones",
+    name: "Verified Client",
     date: "May 2024",
     rating: 5,
-    text: "Corey and the team were great from start to finish, very clean and efficient. The communication from the office prior to starting work was also excellent.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=80",
+    text: "Corey and the team were great from start to finish, very clean and efficient. The communication from the office prior to starting work was also efficient.",
+    image: null,
   },
   {
-    name: "Catherine Price",
+    name: "Verified Client",
     date: "April 2024",
     rating: 5,
     text: "I highly recommend them. Their professionalism shone through from quote to completion. Great communication and the guys who did the work were polite, friendly, efficient and very clean.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
   {
-    name: "Thomas Richards",
+    name: "Verified Client",
     date: "March 2024",
     rating: 5,
-    text: "My husband and myself bought a property that required a full rewire. The team was so accommodating, reassuring and extremely helpful with the initial visit.",
-    image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&q=80",
+    text: "My husband and myself bought a property that required a full rewire, this wasn't something we budgeted for. The team was so accommodating, reassuring and extremely helpful with the initial visit.",
+    image: null,
   },
   {
-    name: "Hannah Lewis",
+    name: "Verified Client",
     date: "February 2024",
     rating: 5,
     text: "They went above and beyond at short notice and turned around a full rewire in 3 days without compromising on the quality. Absolutely brilliant service!",
-    image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
   {
-    name: "Andrew Morris",
+    name: "Verified Client",
     date: "January 2024",
     rating: 5,
-    text: "From start to finish the work has been smooth. I needed a full rewire as part of a project and had lots of other work booked in. They worked around my schedule perfectly.",
-    image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&q=80",
+    text: "From start to finish the work has been smooth. Great communication from the office and the team were polite, friendly, efficient and very clean. Highly recommend.",
+    image: null,
   },
   {
-    name: "Sophie Hughes",
+    name: "Verified Client",
     date: "December 2023",
     rating: 5,
     text: "Professional, punctual, and thorough. They explained everything clearly and left our home spotless. Would use again without hesitation.",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Mark Phillips",
-    date: "November 2023",
-    rating: 5,
-    text: "Excellent work on our full house rewire. The team was incredibly professional and completed the job ahead of schedule. Very impressed with the quality.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Jennifer Roberts",
-    date: "October 2023",
-    rating: 5,
-    text: "Had our consumer unit upgraded and additional sockets installed. Brilliant service from start to finish. Would highly recommend to anyone.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Paul Edwards",
-    date: "September 2023",
-    rating: 5,
-    text: "Fantastic job on our EV charger installation. The electrician was knowledgeable and took time to explain everything. Great communication throughout.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Rachel Green",
-    date: "August 2023",
-    rating: 5,
-    text: "Used them for emergency work when our electrics went down. They came out same day and resolved the issue quickly. Couldn't ask for better service.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Chris Mitchell",
-    date: "July 2023",
-    rating: 5,
-    text: "Had all the lights in our new extension installed. The finish is immaculate and exactly what we wanted. Very fair price for excellent work.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80",
-  },
-  {
-    name: "Amanda Wilson",
-    date: "June 2023",
-    rating: 5,
-    text: "From the initial quote to completion, everything was handled professionally. The team left everything spotless. Would definitely use again.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&q=80",
+    image: null,
   },
 ];
 
@@ -148,7 +108,7 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof allTestim
         style={{ color: 'var(--gold-24k)' }}
       />
 
-      <div className="flex gap-1 mb-3">
+      <div className="flex gap-1 mb-3 justify-center md:justify-start">
         {Array.from({ length: testimonial.rating }).map((_, j) => (
           <Star
             key={j}
@@ -160,18 +120,21 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof allTestim
       </div>
 
       <p
-        className="mb-4 text-sm leading-relaxed"
+        className="mb-4 text-sm leading-relaxed text-center md:text-left"
         style={{ color: 'var(--text-secondary)' }}
       >
         "{testimonial.text}"
       </p>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center justify-center md:justify-start gap-3">
+        {/* Avatar placeholder - awaiting real client photos */}
         <div
-          className="h-10 w-10 rounded-full bg-cover bg-center"
-          style={{ backgroundImage: `url('${testimonial.image}')` }}
-        />
-        <div>
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+          style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+        >
+          <User size={20} style={{ color: 'var(--luxe-noir)' }} />
+        </div>
+        <div className="text-center md:text-left">
           <p
             className="text-sm font-semibold"
             style={{ color: 'var(--text-primary)' }}
@@ -193,10 +156,10 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof allTestim
 export function Testimonials() {
   const [showMore, setShowMore] = useState(false);
 
-  // Desktop: 9 initial, 9 more (18 total)
+  // Desktop: 9 initial, 3 more (12 total)
   // Mobile: 3 initial, 5 more (8 total)
   const initialDesktop = 9;
-  const moreDesktop = 9;
+  const moreDesktop = 3;
   const initialMobile = 3;
   const moreMobile = 5;
 
@@ -214,10 +177,10 @@ export function Testimonials() {
             className="text-4xl font-bold md:text-5xl mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            What Our <span className="text-molten-gold">Clients Say</span>
+            What Our<br className="md:hidden" /> <span className="text-molten-gold">Clients Say</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)' }}>
-            Don't just take our word for it — hear from homeowners like you.
+            Don't just take our word for it. Hear from homeowners like you.
           </p>
         </motion.div>
 
