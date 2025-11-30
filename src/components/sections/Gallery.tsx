@@ -47,7 +47,7 @@ export function Gallery() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-16"
         >
           <h2
@@ -68,7 +68,7 @@ export function Gallery() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
+              transition={{ duration: 0.15 }}
               className="group relative aspect-square overflow-hidden rounded-2xl"
             >
               <div
@@ -101,7 +101,7 @@ export function Gallery() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.2 }}
           className="text-center"
         >
           <Link

@@ -160,7 +160,7 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="relative w-full max-w-lg rounded-3xl bg-white p-8 shadow-2xl"
+          className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl bg-white p-8 shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
@@ -305,7 +305,7 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
               {/* Competitor Pricing Comparison */}
               <div className="mb-8 p-6 rounded-2xl" style={{ background: 'var(--canvas-cream)' }}>
                 <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                  Why Choose ElectroMain?
+                  ElectroMain vs Competitors
                 </h4>
 
                 <div className="space-y-3 text-left">
@@ -345,17 +345,17 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                         Typical Competitors
                       </p>
                       <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Quote <strong>£{Math.round(calculateEstimate().low * 0.8).toLocaleString()}</strong>, then add: "site visit fees" (+£150), "materials markup" (+20%), "unexpected complications" (+£500+), "certification fee" (+£200). <strong>Final cost often 30-50% higher than quoted.</strong>
+                        Quotes close to our price <strong>£{Math.round(calculateEstimate().low * 0.95).toLocaleString()}</strong>, then adds: "site visit fee" (+£150), "materials markup" (+£{Math.round(calculateEstimate().low * 0.2).toLocaleString()}), "unexpected complications" (+£500-£800), "certification fee" (+£200). <strong>Final total: £{Math.round(calculateEstimate().low * 0.95 + 150 + calculateEstimate().low * 0.2 + 650 + 200).toLocaleString()}+</strong> - significantly more than our transparent pricing.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-3">
+              <div className="flex flex-col items-center gap-3">
                 <a
                   href="tel:02922402640"
-                  className="flex items-center justify-center gap-2 w-full rounded-full px-6 py-4 font-semibold text-white transition-all hover:opacity-90"
+                  className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-all hover:opacity-90"
                   style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
                 >
                   <Phone size={18} />
@@ -364,7 +364,7 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
 
                 <a
                   href="mailto:info@electro-main.com"
-                  className="flex items-center justify-center gap-2 w-full rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
                   style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
                 >
                   <Mail size={18} />

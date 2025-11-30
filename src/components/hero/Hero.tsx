@@ -89,8 +89,11 @@ export function Hero() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center md:justify-start">
                 <Link
                   href="#estimate"
-                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full border-2 border-white bg-white px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold w-auto mx-auto md:mx-0"
-                  style={{ color: 'var(--luxe-noir)' }}
+                  className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold w-auto mx-auto md:mx-0"
+                  style={{
+                    background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+                    color: 'var(--luxe-noir)'
+                  }}
                 >
                   <FileText size={20} />
                   Get My Free Quote
