@@ -30,13 +30,13 @@ export default function Home() {
       <VideoShowcase />
       <Gallery />
       <Problem />
+      <AboutPreview />
       <Benefits />
       <Priority />
       <Process />
       <Stats />
       <Efficiency />
       <RewireDiagnostic />
-      <AboutPreview />
       <Services />
       <WhoWeServe />
       <Testimonials />

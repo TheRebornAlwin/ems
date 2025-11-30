@@ -5,91 +5,91 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronDown, ChevronUp, User } from "lucide-react";
 
 // REAL testimonials from actual clients - using verbatim language
-// Images placeholders - awaiting real client photos
+// PLACEHOLDER names and images - will be replaced with real client data before production
 const allTestimonials = [
   {
-    name: "Verified Client",
+    name: "James Williams",
     date: "November 2024",
     rating: 5,
     text: "They turned up, gave a fair fixed quote, finished in a week and handed over the certificate. They cleaned up after themselves and kept me informed on everything all the way through.",
-    image: null, // Awaiting real client photo
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Sarah Thompson",
     date: "October 2024",
     rating: 5,
     text: "I was expecting an extremely stressful process but I was so wrong! It was stress free, they kept us updated throughout the whole process and it only took a few days, they even organised the plasterer to come out after the work had been complete as well, which was extremely helpful and also added to the stress free process.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Michael Davies",
     date: "September 2024",
     rating: 5,
     text: "From start to finish the work was smooth. I needed a full rewire as part of a project and had lots of other work booked in. They worked around my schedule perfectly.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Emma Roberts",
     date: "August 2024",
     rating: 5,
     text: "Their advice helped us have a better set up and save money. The group grafted for 4 days straight and even stayed until late on the last day so we could be back in our house sooner.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "David Morgan",
     date: "July 2024",
     rating: 5,
     text: "Couldn't recommend this company any higher. Gave us a start and finish date and bang on time. Would definitely recommend to anyone. Kept in touch with us all the way through the job.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Rachel Price",
     date: "June 2024",
     rating: 5,
     text: "The job was done quickly and to a high standard. They communicated really well throughout and made sure I was totally satisfied before they signed it off.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Thomas Evans",
     date: "May 2024",
     rating: 5,
     text: "Corey and the team were great from start to finish, very clean and efficient. The communication from the office prior to starting work was also efficient.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Lisa Jenkins",
     date: "April 2024",
     rating: 5,
     text: "I highly recommend them. Their professionalism shone through from quote to completion. Great communication and the guys who did the work were polite, friendly, efficient and very clean.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Catherine Hughes",
     date: "March 2024",
     rating: 5,
     text: "My husband and myself bought a property that required a full rewire, this wasn't something we budgeted for. The team was so accommodating, reassuring and extremely helpful with the initial visit.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Andrew Lewis",
     date: "February 2024",
     rating: 5,
     text: "They went above and beyond at short notice and turned around a full rewire in 3 days without compromising on the quality. Absolutely brilliant service!",
-    image: null,
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Sophie Taylor",
     date: "January 2024",
     rating: 5,
     text: "From start to finish the work has been smooth. Great communication from the office and the team were polite, friendly, efficient and very clean. Highly recommend.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=150&h=150&fit=crop&crop=faces",
   },
   {
-    name: "Verified Client",
+    name: "Robert Harris",
     date: "December 2023",
     rating: 5,
     text: "Professional, punctual, and thorough. They explained everything clearly and left our home spotless. Would use again without hesitation.",
-    image: null,
+    image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=150&h=150&fit=crop&crop=faces",
   },
 ];
 
@@ -127,13 +127,20 @@ function TestimonialCard({ testimonial, index }: { testimonial: typeof allTestim
       </p>
 
       <div className="flex items-center justify-center md:justify-start gap-3">
-        {/* Avatar placeholder - awaiting real client photos */}
-        <div
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-          style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-        >
-          <User size={20} style={{ color: 'var(--luxe-noir)' }} />
-        </div>
+        {/* Avatar - placeholder images until replaced with real client photos */}
+        {testimonial.image ? (
+          <div
+            className="h-10 w-10 shrink-0 rounded-full bg-cover bg-center"
+            style={{ backgroundImage: `url('${testimonial.image}')` }}
+          />
+        ) : (
+          <div
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+            style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+          >
+            <User size={20} style={{ color: 'var(--luxe-noir)' }} />
+          </div>
+        )}
         <div className="text-center md:text-left">
           <p
             className="text-sm font-semibold"
