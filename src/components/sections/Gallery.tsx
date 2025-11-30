@@ -8,14 +8,14 @@ import { ArrowRight } from "lucide-react";
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60ptY01d6Ni6Av54RNPWqbT1C089xjJVmBeXwk",
-    title: "Full Rewire - Cardiff",
-    category: "Residential Rewire"
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop",
+    title: "Modern Consumer Unit",
+    category: "Electrical Upgrade"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60YGz7T8bFJWghNpkz60GSmELv43BZaxPTbOY9",
-    title: "Consumer Unit Upgrade",
-    category: "Electrical Upgrade"
+    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop",
+    title: "Commercial Office Wiring",
+    category: "Commercial Installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60iMFaHgGBMDoNa9vqeyzZCf5r4PXGYKn6tTU1",
@@ -23,8 +23,8 @@ const galleryPreview = [
     category: "New Installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Kdm3Iw8pEAjeMQOGTb9VvPHucf4Cods1yFk6",
-    title: "Commercial Rewire",
+    url: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=800&fit=crop",
+    title: "Electrical Panel Installation",
     category: "Commercial"
   },
   {
@@ -33,9 +33,9 @@ const galleryPreview = [
     category: "Residential"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60PPqIhQwWZl4eY2dwOTHEaNFMLx7ByuziDjQs",
-    title: "Fire Alarms & CCTV",
-    category: "Security"
+    url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop",
+    title: "Industrial Electrical Work",
+    category: "Commercial"
   },
 ];
 
