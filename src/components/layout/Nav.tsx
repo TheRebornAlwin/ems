@@ -21,7 +21,7 @@ export function Nav() {
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.15 }}
         className="absolute top-0 left-0 right-0 z-50 px-6 py-4"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -54,8 +54,11 @@ export function Nav() {
           {/* CTA Button */}
           <Link
             href="#estimate"
-            className="btn-luxury hidden rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white lg:block"
-            style={{ color: 'var(--luxe-noir)' }}
+            className="btn-luxury hidden rounded-full px-6 py-3 text-sm font-semibold lg:block"
+            style={{
+              background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
+              color: 'var(--luxe-noir)'
+            }}
           >
             Free Estimate
           </Link>

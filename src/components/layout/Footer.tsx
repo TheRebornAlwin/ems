@@ -14,10 +14,10 @@ const footerLinks = {
     { label: "Facilities Maintenance", href: "#services" },
   ],
   company: [
+    { label: "Services", href: "#services" },
     { label: "About Us", href: "/about" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Contact", href: "/contact" },
-    { label: "Reviews", href: "#reviews" },
+    { label: "Contact Us", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/legal/privacy" },

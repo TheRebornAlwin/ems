@@ -82,18 +82,17 @@ export function AboutPreview() {
             className="relative"
           >
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=400&fit=crop&crop=faces",
+                "https://images.unsplash.com/photo-1580982324927-c3207686d2f6?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?w=400&h=400&fit=crop&crop=faces",
+                "https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=400&h=400&fit=crop"
+              ].map((imageUrl, i) => (
                 <div
                   key={i}
-                  className="aspect-square rounded-2xl flex items-center justify-center"
-                  style={{
-                    background: i % 2 === 0
-                      ? 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))'
-                      : 'var(--canvas-base)'
-                  }}
-                >
-                  <Users size={32} style={{ color: i % 2 === 0 ? 'var(--luxe-noir)' : 'var(--gold-24k)' }} />
-                </div>
+                  className="aspect-square rounded-2xl bg-cover bg-center"
+                  style={{ backgroundImage: `url('${imageUrl}')` }}
+                />
               ))}
             </div>
 

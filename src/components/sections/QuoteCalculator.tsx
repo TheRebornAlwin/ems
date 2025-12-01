@@ -227,6 +227,11 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                     max={currentQuestion.max}
                     value={answers[currentQuestion.id] || ""}
                     onChange={(e) => handleAnswer(parseInt(e.target.value) || "")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && answers[currentQuestion.id]) {
+                        nextStep();
+                      }
+                    }}
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gold-24k)] focus:outline-none text-lg"
                     placeholder="Enter number..."
                   />
@@ -345,7 +350,7 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                         Typical Competitors
                       </p>
                       <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Quotes close to our price <strong>£{Math.round(calculateEstimate().low * 0.95).toLocaleString()}</strong>, then adds: "site visit fee" (+£150), "materials markup" (+£{Math.round(calculateEstimate().low * 0.2).toLocaleString()}), "unexpected complications" (+£500-£800), "certification fee" (+£200). <strong>Final total: £{Math.round(calculateEstimate().low * 0.95 + 150 + calculateEstimate().low * 0.2 + 650 + 200).toLocaleString()}+</strong> - significantly more than our transparent pricing.
+                        Quotes close to our price <strong>£{Math.round(calculateEstimate().low * 0.95).toLocaleString()}</strong>, then adds: "site visit fee" (+£150), "materials markup" (+£{Math.round(calculateEstimate().low * 0.2).toLocaleString()}), "unexpected complications" (+£500-£800), "certification fee" (+£200). <strong>Final total: £{Math.round(calculateEstimate().low * 0.95 + 150 + calculateEstimate().low * 0.2 + 650 + 200).toLocaleString()}+</strong>
                       </p>
                     </div>
                   </div>

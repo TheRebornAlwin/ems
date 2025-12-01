@@ -8,33 +8,33 @@ import { ArrowRight } from "lucide-react";
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop",
-    title: "Modern Consumer Unit",
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop",
+    title: "Modern Consumer Unit Installation",
     category: "Electrical Upgrade"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop",
-    title: "Commercial Office Wiring",
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop",
+    title: "Professional Panel Wiring",
     category: "Commercial Installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60iMFaHgGBMDoNa9vqeyzZCf5r4PXGYKn6tTU1",
-    title: "Residential Installation",
-    category: "New Installation"
+    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop",
+    title: "Industrial Circuit Installation",
+    category: "Industrial"
   },
   {
-    url: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=800&fit=crop",
-    title: "Electrical Panel Installation",
-    category: "Commercial"
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop&sat=-100",
+    title: "Electrical Safety Inspection",
+    category: "Testing & Certification"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60t8SiBDLF5A910T6eXYULNah2yOEodiZrxz7J",
-    title: "Complete Rewire",
+    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=800&h=800&fit=crop",
+    title: "Complete Home Rewire",
     category: "Residential"
   },
   {
-    url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop",
-    title: "Industrial Electrical Work",
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop&sat=-50",
+    title: "Commercial Electrical Systems",
     category: "Commercial"
   },
 ];

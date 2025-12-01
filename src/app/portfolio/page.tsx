@@ -10,85 +10,85 @@ import { ArrowLeft } from "lucide-react";
 // These are placeholders from the existing image URLs
 const portfolioImages = [
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60ptY01d6Ni6Av54RNPWqbT1C089xjJVmBeXwk",
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop",
     title: "Full Rewire - Cardiff Property",
     category: "Residential Rewire",
     description: "Complete electrical rewire of 3-bedroom terraced home"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60YGz7T8bFJWghNpkz60GSmELv43BZaxPTbOY9",
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop",
     title: "Consumer Unit Upgrade",
     category: "Electrical Upgrade",
     description: "Modern consumer unit installation with RCD protection"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60iMFaHgGBMDoNa9vqeyzZCf5r4PXGYKn6tTU1",
+    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop",
     title: "Residential Installation",
     category: "New Installation",
     description: "Complete electrical system for new build property"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Kdm3Iw8pEAjeMQOGTb9VvPHucf4Cods1yFk6",
+    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=800&h=800&fit=crop",
     title: "Commercial Rewire",
     category: "Commercial",
     description: "Office space electrical installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo609iPdL0mkOo60mSgwsLubYaVHUeZBvyD9TdWx",
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop",
     title: "Property Management Contract",
     category: "Commercial",
     description: "Ongoing electrical maintenance for rental properties"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60gHrL3xZV8TSw3Eq65OlbXHWjfmkQ9uxopDJr",
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop&sat=-50",
     title: "Contractor Partnership",
     category: "Commercial",
     description: "Electrical work for building contractor projects"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60vd15rezWSA8zgZpmajMcw2Pl7b5uohUO30H9",
+    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop",
     title: "Business Premises",
     category: "Commercial",
     description: "Complete electrical installation for retail unit"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60uB3X7XOHD0zOJ43Z2VpmkjTA5CBWlfQGweb6",
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop&sat=-80",
     title: "Development Project",
     category: "New Build",
     description: "Multi-property development electrical package"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60t8SiBDLF5A910T6eXYULNah2yOEodiZrxz7J",
+    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop&sat=-40",
     title: "Electrical Services",
     category: "Residential",
     description: "Complete rewire with modern lighting installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60EJiO8YTzmkqQweVdh9cnL2vfjKiTGDugRSaX",
+    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=800&h=800&fit=crop&sat=-60",
     title: "Heating System Integration",
     category: "Heating",
     description: "Electrical work for heating system installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60PPqIhQwWZl4eY2dwOTHEaNFMLx7ByuziDjQs",
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop&sat=-30",
     title: "Fire Alarms & CCTV",
     category: "Security",
     description: "Complete fire alarm and CCTV system installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60bVOie1FfGHBJLDvIR7wkdyZxNtrq1MXp4C38",
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop&brightness=110",
     title: "Facilities Maintenance Contract",
     category: "Maintenance",
     description: "Ongoing electrical maintenance for commercial building"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60faANKp6O7G2NiKv0Hn8SPa6RsEQeXwfhtd1q",
+    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop&sat=-20",
     title: "Renovation Project",
     category: "Renovation",
     description: "Full electrical rewire as part of home renovation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TgR4O1mjcPN9SbhB7l5xKRsGCdfQkI4iEoXz",
+    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop&brightness=105",
     title: "Extension Electrical Work",
     category: "Extension",
     description: "New electrical installation for home extension"
@@ -113,11 +113,7 @@ export default function PortfolioPage() {
       <Nav />
       <main className="pt-32 pb-24 px-6" style={{ background: 'var(--canvas-base)' }}>
         <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-          >
+          <div>
             <Link
               href="/"
               className="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-colors hover:opacity-70"
@@ -185,7 +181,7 @@ export default function PortfolioPage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </main>
       <Footer />

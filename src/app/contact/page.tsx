@@ -12,11 +12,7 @@ export default function ContactPage() {
       <Nav />
       <main className="pt-32 pb-24 px-6" style={{ background: 'var(--canvas-base)' }}>
         <div className="mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2 }}
-          >
+          <div>
             <Link
               href="/"
               className="inline-flex items-center gap-2 mb-8 text-sm font-medium transition-colors hover:opacity-70"
@@ -44,7 +40,7 @@ export default function ContactPage() {
                 href="tel:02922402640"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
+                transition={{ duration: 0.15, delay: 0.05 }}
                 className="group p-6 rounded-2xl transition-all hover:shadow-lg"
                 style={{ background: 'var(--canvas-cream)' }}
               >
@@ -70,7 +66,7 @@ export default function ContactPage() {
                 href="mailto:info@electro-main.com"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
+                transition={{ duration: 0.15, delay: 0.1 }}
                 className="group p-6 rounded-2xl transition-all hover:shadow-lg"
                 style={{ background: 'var(--canvas-cream)' }}
               >
@@ -95,7 +91,7 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
+                transition={{ duration: 0.15, delay: 0.15 }}
                 className="p-6 rounded-2xl"
                 style={{ background: 'var(--canvas-cream)' }}
               >
@@ -120,7 +116,7 @@ export default function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
+                transition={{ duration: 0.15, delay: 0.2 }}
                 className="p-6 rounded-2xl"
                 style={{ background: 'var(--canvas-cream)' }}
               >
@@ -149,7 +145,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.5 }}
+              transition={{ duration: 0.15, delay: 0.25 }}
               className="text-center p-8 rounded-3xl"
               style={{ background: 'var(--canvas-cream)' }}
             >
@@ -170,7 +166,7 @@ export default function ContactPage() {
                 Get Your Free Quote
               </Link>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </main>
       <Footer />
