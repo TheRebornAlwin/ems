@@ -8,32 +8,32 @@ import { ArrowRight } from "lucide-react";
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&h=600&fit=crop&q=80",
     title: "Modern Consumer Unit Installation",
     category: "Electrical Upgrade"
   },
   {
-    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=600&fit=crop&q=80",
     title: "Professional Panel Wiring",
     category: "Commercial Installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&h=600&fit=crop&q=80",
     title: "Industrial Circuit Installation",
     category: "Industrial"
   },
   {
-    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&h=600&fit=crop&q=80",
     title: "Electrical Safety Inspection",
     category: "Testing & Certification"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=600&h=600&fit=crop&q=80",
     title: "Complete Home Rewire",
     category: "Residential"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=600&fit=crop&q=80",
     title: "Commercial Electrical Systems",
     category: "Commercial"
   },
@@ -63,17 +63,15 @@ export function Gallery() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {galleryPreview.map((image, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.15 }}
               className="group relative aspect-square overflow-hidden rounded-2xl"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url('${image.url}')` }}
+              <img
+                src={image.url}
+                alt={image.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
               {/* Overlay */}
@@ -92,7 +90,7 @@ export function Gallery() {
                 className="absolute inset-0 rounded-2xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 style={{ borderColor: 'var(--gold-24k)' }}
               />
-            </motion.div>
+            </div>
           ))}
         </div>
 

@@ -1,94 +1,94 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 // Portfolio gallery images - AWAITING REAL CLIENT PROJECT PHOTOS
 // These are placeholders from the existing image URLs
 const portfolioImages = [
   {
-    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=400&fit=crop&q=75",
     title: "Full Rewire - Cardiff Property",
     category: "Residential Rewire",
     description: "Complete electrical rewire of 3-bedroom terraced home"
   },
   {
-    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&q=75",
     title: "Consumer Unit Upgrade",
     category: "Electrical Upgrade",
     description: "Modern consumer unit installation with RCD protection"
   },
   {
-    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&h=400&fit=crop&q=75",
     title: "Residential Installation",
     category: "New Installation",
     description: "Complete electrical system for new build property"
   },
   {
-    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=400&fit=crop&q=75",
     title: "Commercial Rewire",
     category: "Commercial",
     description: "Office space electrical installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=400&h=400&fit=crop&q=75",
     title: "Property Management Contract",
     category: "Commercial",
     description: "Ongoing electrical maintenance for rental properties"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&q=75",
     title: "Contractor Partnership",
     category: "Commercial",
     description: "Electrical work for building contractor projects"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=400&fit=crop&q=75",
     title: "Business Premises",
     category: "Commercial",
     description: "Complete electrical installation for retail unit"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=400&h=400&fit=crop&q=75",
     title: "Development Project",
     category: "New Build",
     description: "Multi-property development electrical package"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=400&fit=crop&q=75",
     title: "Electrical Services",
     category: "Residential",
     description: "Complete rewire with modern lighting installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop&q=75",
     title: "Heating System Integration",
     category: "Heating",
     description: "Electrical work for heating system installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=400&h=400&fit=crop&q=75",
     title: "Fire Alarms & CCTV",
     category: "Security",
     description: "Complete fire alarm and CCTV system installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop&q=75",
     title: "Facilities Maintenance Contract",
     category: "Maintenance",
     description: "Ongoing electrical maintenance for commercial building"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=400&fit=crop&q=75",
     title: "Renovation Project",
     category: "Renovation",
     description: "Full electrical rewire as part of home renovation"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=400&h=400&fit=crop&q=75",
     title: "Extension Electrical Work",
     category: "Extension",
     description: "New electrical installation for home extension"
@@ -144,19 +144,17 @@ export default function PortfolioPage() {
             {/* Portfolio Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {portfolioImages.map((project, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.15 }}
                   className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-shadow"
                 >
                   {/* Image */}
-                  <div className="aspect-square overflow-hidden">
-                    <div
-                      className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                      style={{ backgroundImage: `url('${project.url}')` }}
+                  <div className="aspect-square overflow-hidden relative">
+                    <img
+                      src={project.url}
+                      alt={project.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
 
@@ -178,7 +176,7 @@ export default function PortfolioPage() {
                     className="absolute inset-0 rounded-2xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                     style={{ borderColor: 'var(--gold-24k)' }}
                   />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
