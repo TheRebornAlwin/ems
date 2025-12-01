@@ -8,32 +8,32 @@ import { ArrowRight } from "lucide-react";
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=800&fit=crop",
     title: "Modern Consumer Unit Installation",
     category: "Electrical Upgrade"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=800&fit=crop",
     title: "Professional Panel Wiring",
     category: "Commercial Installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800&h=800&fit=crop",
     title: "Industrial Circuit Installation",
     category: "Industrial"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252472-aa5b82cd9f36?w=800&h=800&fit=crop&sat=-100",
+    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&h=800&fit=crop",
     title: "Electrical Safety Inspection",
     category: "Testing & Certification"
   },
   {
-    url: "https://images.unsplash.com/photo-1581092583537-20d51876db4c?w=800&h=800&fit=crop",
+    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=800&h=800&fit=crop",
     title: "Complete Home Rewire",
     category: "Residential"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&h=800&fit=crop&sat=-50",
+    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=800&fit=crop",
     title: "Commercial Electrical Systems",
     category: "Commercial"
   },
