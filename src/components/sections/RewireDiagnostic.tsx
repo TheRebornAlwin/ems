@@ -93,11 +93,7 @@ export function RewireDiagnostic() {
                   : 'var(--canvas-cream)'
               }}
             >
-              {item.severity === "high" ? (
-                <AlertTriangle size={20} style={{ color: 'var(--gold-24k)' }} className="shrink-0 mt-0.5" />
-              ) : (
-                <AlertTriangle size={20} style={{ color: 'var(--text-muted)' }} className="shrink-0 mt-0.5" />
-              )}
+              <AlertTriangle size={20} style={{ color: 'var(--gold-24k)' }} className="shrink-0 mt-0.5" />
               <p
                 className="text-sm"
                 style={{ color: 'var(--text-primary)' }}
@@ -107,65 +103,6 @@ export function RewireDiagnostic() {
             </motion.div>
           ))}
         </div>
-
-        {/* Not Sure? Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="p-8 rounded-3xl text-center"
-          style={{ background: 'linear-gradient(135deg, var(--canvas-cream), rgba(230, 184, 0, 0.1))' }}
-        >
-          <h3 className="text-2xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-            Not Sure? Get a <span className="text-molten-gold">Free Safety Check</span>
-          </h3>
-          <p className="text-base mb-6 max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-            Our NICEIC-certified electricians can inspect your home and give you a clear, honest answer.
-            No pressure, no upsell. If you don't need a rewire, we'll tell you.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="#estimate"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
-              style={{
-                background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
-                color: 'var(--luxe-noir)'
-              }}
-            >
-              Request Free Safety Check
-            </Link>
-
-            <a
-              href="tel:02922402640"
-              className="inline-flex items-center gap-2 rounded-full border-2 px-8 py-4 text-base font-semibold transition-all hover:opacity-80"
-              style={{
-                borderColor: 'var(--gold-24k)',
-                color: 'var(--text-primary)'
-              }}
-            >
-              Call: 02922 402640
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Safety Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-8 p-4 rounded-xl flex items-start gap-3"
-          style={{ background: 'rgba(230, 184, 0, 0.1)' }}
-        >
-          <AlertTriangle size={20} style={{ color: 'var(--gold-24k)' }} className="shrink-0 mt-0.5" />
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--text-primary)' }}>Important:</strong> If you notice any burning smells,
-            scorch marks, or persistent electrical issues, contact us immediately for emergency assistance.
-            Don't wait for a scheduled inspection.
-          </p>
-        </motion.div>
       </div>
     </section>
   );

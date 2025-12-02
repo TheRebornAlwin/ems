@@ -12,7 +12,6 @@ import { Stats } from "@/components/sections/Stats";
 import { Services } from "@/components/sections/Services";
 import { Efficiency } from "@/components/sections/Efficiency";
 import { RewireDiagnostic } from "@/components/sections/RewireDiagnostic";
-import { AboutPreview } from "@/components/sections/AboutPreview";
 import { Gallery } from "@/components/sections/Gallery";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -28,7 +27,6 @@ export default function Home() {
       <Hero />
       <Gallery />
       <Problem />
-      <AboutPreview />
       <Benefits />
       <Priority />
       <Process />
