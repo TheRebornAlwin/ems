@@ -14,7 +14,6 @@ import { Efficiency } from "@/components/sections/Efficiency";
 import { RewireDiagnostic } from "@/components/sections/RewireDiagnostic";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { Gallery } from "@/components/sections/Gallery";
-import { VideoShowcase } from "@/components/sections/VideoShowcase";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { QuoteCalculator } from "@/components/sections/QuoteCalculator";
@@ -27,7 +26,6 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
-      <VideoShowcase />
       <Gallery />
       <Problem />
       <AboutPreview />
