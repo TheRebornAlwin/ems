@@ -26,6 +26,26 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prefetch portfolio images on hover for instant loading
+  const prefetchPortfolioImages = () => {
+    if (typeof window === 'undefined') return;
+
+    const imagesToPreload = [
+      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
+      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
+    ];
+
+    imagesToPreload.forEach(url => {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.as = 'image';
+      link.href = url;
+      document.head.appendChild(link);
+    });
+  };
+
   return (
     <>
       <motion.nav
@@ -58,6 +78,7 @@ export function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
+                onMouseEnter={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
                 className="text-sm font-medium text-white/90 transition-colors hover:text-white"
               >
                 {link.label}
@@ -131,6 +152,7 @@ export function Nav() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
+                      onTouchStart={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
                       className="block text-xl font-semibold text-white py-2"
                     >
                       {link.label}

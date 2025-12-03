@@ -13,7 +13,7 @@ export function AnimatedLayout({ children }: AnimatedLayoutProps) {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <PageTransition key={pathname}>
         {children}
       </PageTransition>
