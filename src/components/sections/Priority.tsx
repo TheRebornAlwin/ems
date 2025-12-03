@@ -28,7 +28,7 @@ export function Priority() {
               <div
                 className="aspect-[4/3] w-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `url('https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60YGz7T8bFJWghNpkz60GSmELv43BZaxPTbOY9')`,
+                  backgroundImage: `url('https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60n7j3oxt6EageXHpiQM3YslWnZm14NyRUxcfA')`,
                 }}
               />
             </div>
