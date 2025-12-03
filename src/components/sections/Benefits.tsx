@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Clock, PoundSterling, MessageSquare, Shield, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const benefits = [
   {
@@ -27,7 +26,11 @@ const benefits = [
   },
 ];
 
-export function Benefits() {
+interface BenefitsProps {
+  onOpenCalculator: () => void;
+}
+
+export function Benefits({ onOpenCalculator }: BenefitsProps) {
   return (
     <section className="py-24 px-6" style={{ background: 'var(--canvas-cream)' }}>
       <div className="mx-auto max-w-6xl">
@@ -85,8 +88,8 @@ export function Benefits() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <Link
-            href="#estimate"
+          <button
+            onClick={onOpenCalculator}
             className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
             style={{
               background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
@@ -95,7 +98,7 @@ export function Benefits() {
           >
             Get My Free Quote
             <ArrowRight size={18} />
-          </Link>
+          </button>
         </motion.div>
       </div>
     </section>

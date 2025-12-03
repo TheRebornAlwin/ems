@@ -119,14 +119,14 @@ export function Services() {
           className="text-center"
         >
           <Link
-            href="#estimate"
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
             style={{
               background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
               color: 'var(--luxe-noir)'
             }}
           >
-            Get Your Free Estimate
+            Contact Us
             <ArrowRight size={18} />
           </Link>
         </motion.div>

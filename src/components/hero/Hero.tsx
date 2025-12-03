@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Phone, FileText, Shield, Clock } from "lucide-react";
-import Link from "next/link";
 
 const trustBadges = [
   {
@@ -22,7 +21,11 @@ const trustBadges = [
   },
 ];
 
-export function Hero() {
+interface HeroProps {
+  onOpenCalculator: () => void;
+}
+
+export function Hero({ onOpenCalculator }: HeroProps) {
   // Mobile: full vh, Desktop: cut 50px from bottom
   const heroHeight = "h-screen md:h-[calc(100vh-50px)]";
 
@@ -87,8 +90,8 @@ export function Hero() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center justify-center md:justify-start">
-                <Link
-                  href="#estimate"
+                <button
+                  onClick={onOpenCalculator}
                   className="btn-luxury inline-flex items-center justify-center gap-3 rounded-full px-6 sm:px-8 py-4 text-sm sm:text-base font-semibold w-auto mx-auto md:mx-0"
                   style={{
                     background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
@@ -97,7 +100,7 @@ export function Hero() {
                 >
                   <FileText size={20} />
                   Get My Free Quote
-                </Link>
+                </button>
 
                 <a
                   href="tel:02922402640"

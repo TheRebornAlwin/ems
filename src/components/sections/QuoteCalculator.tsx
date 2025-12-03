@@ -21,6 +21,7 @@ const questions = [
       { label: "Lighting Installation", value: "lighting", basePrice: 400 },
       { label: "Fault Finding & Repair", value: "fault", basePrice: 150 },
       { label: "Testing & Inspection", value: "testing", basePrice: 250 },
+      { label: "Other", value: "other", basePrice: 500 },
     ],
   },
   {
@@ -34,14 +35,6 @@ const questions = [
       { label: "Detached House", value: "detached", multiplier: 1.5 },
       { label: "Commercial Property", value: "commercial", multiplier: 2.0 },
     ],
-  },
-  {
-    id: "bedrooms",
-    question: "How many bedrooms?",
-    type: "number",
-    min: 1,
-    max: 10,
-    multiplierPerUnit: 0.15,
   },
   {
     id: "age",
@@ -71,11 +64,19 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, any>>({});
   const [showResult, setShowResult] = useState(false);
+  const [customService, setCustomService] = useState("");
+  const [showCustomInput, setShowCustomInput] = useState(false);
 
   const currentQuestion = questions[currentStep];
 
   const handleAnswer = (value: any) => {
     setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }));
+
+    // Show custom input if "Other" is selected
+    if (currentQuestion.id === "serviceType" && value === "other") {
+      setShowCustomInput(true);
+      return;
+    }
 
     // Auto-advance for choice questions
     if (currentQuestion.type === "choice") {
@@ -116,18 +117,14 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
     ) as { multiplier?: number } | undefined;
     price *= propertyOption?.multiplier || 1;
 
-    // Apply bedroom multiplier
-    const bedrooms = answers.bedrooms || 3;
-    price *= 1 + (bedrooms - 1) * 0.15;
-
     // Apply age multiplier
-    const ageOption = questions[3].options?.find(
+    const ageOption = questions[2].options?.find(
       (o) => o.value === answers.age
     ) as { multiplier?: number } | undefined;
     price *= ageOption?.multiplier || 1;
 
     // Apply urgency multiplier
-    const urgencyOption = questions[4].options?.find(
+    const urgencyOption = questions[3].options?.find(
       (o) => o.value === answers.urgency
     ) as { multiplier?: number } | undefined;
     price *= urgencyOption?.multiplier || 1;
@@ -143,6 +140,8 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
     setCurrentStep(0);
     setAnswers({});
     setShowResult(false);
+    setCustomService("");
+    setShowCustomInput(false);
   };
 
   if (!isOpen) return null;
@@ -160,7 +159,7 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl bg-white p-8 shadow-2xl"
+          className="relative w-full max-w-lg max-h-[75vh] md:max-h-[90vh] overflow-y-auto rounded-3xl bg-white p-6 md:p-8 shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close button */}
@@ -218,25 +217,53 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
                 </div>
               )}
 
-              {/* Number input */}
-              {currentQuestion.type === "number" && (
+              {/* Custom service input for "Other" option */}
+              {showCustomInput && currentQuestion.id === "serviceType" && (
                 <div className="mb-8">
+                  <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
+                    Please describe the service you need:
+                  </label>
                   <input
-                    type="number"
-                    min={currentQuestion.min}
-                    max={currentQuestion.max}
-                    value={answers[currentQuestion.id] || ""}
-                    onChange={(e) => handleAnswer(parseInt(e.target.value) || "")}
+                    type="text"
+                    value={customService}
+                    onChange={(e) => setCustomService(e.target.value)}
                     onKeyDown={(e) => {
-                      if (e.key === "Enter" && answers[currentQuestion.id]) {
-                        nextStep();
+                      if (e.key === "Enter" && customService.trim()) {
+                        setShowCustomInput(false);
+                        if (currentStep < questions.length - 1) {
+                          setCurrentStep((prev) => prev + 1);
+                        } else {
+                          setShowResult(true);
+                        }
                       }
                     }}
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--gold-24k)] focus:outline-none text-lg"
-                    placeholder="Enter number..."
+                    placeholder="e.g., Outdoor lighting, Security system..."
+                    autoFocus
                   />
+                  <button
+                    onClick={() => {
+                      if (customService.trim()) {
+                        setShowCustomInput(false);
+                        if (currentStep < questions.length - 1) {
+                          setCurrentStep((prev) => prev + 1);
+                        } else {
+                          setShowResult(true);
+                        }
+                      }
+                    }}
+                    disabled={!customService.trim()}
+                    className="mt-3 w-full px-4 py-3 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{
+                      background: customService.trim() ? 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' : '#e5e7eb',
+                      color: customService.trim() ? 'var(--luxe-noir)' : '#9ca3af'
+                    }}
+                  >
+                    Continue
+                  </button>
                 </div>
               )}
+
 
               {/* Navigation */}
               <div className="flex justify-between">

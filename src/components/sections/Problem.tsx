@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { X, AlertTriangle, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const painPoints = [
   "Hidden fees and surprise costs that blow your budget",
@@ -11,7 +10,11 @@ const painPoints = [
   "No communication, no updates, no respect for your time",
 ];
 
-export function Problem() {
+interface ProblemProps {
+  onOpenCalculator: () => void;
+}
+
+export function Problem({ onOpenCalculator }: ProblemProps) {
   return (
     <section className="pt-32 pb-24 px-6" style={{ background: 'var(--canvas-base)' }}>
       <div className="mx-auto max-w-7xl">
@@ -91,8 +94,8 @@ export function Problem() {
               It's time to work with South Wales' most trusted electrical specialists.
             </p>
 
-            <Link
-              href="#estimate"
+            <button
+              onClick={onOpenCalculator}
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold transition-all hover:opacity-90"
               style={{
                 background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))',
@@ -101,7 +104,7 @@ export function Problem() {
             >
               Get Your Free Quote
               <ArrowRight size={18} />
-            </Link>
+            </button>
           </motion.div>
         </div>
       </div>

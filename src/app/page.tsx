@@ -20,14 +20,15 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const openCalculator = () => setIsCalculatorOpen(true);
 
   return (
     <>
       <Nav />
-      <Hero />
+      <Hero onOpenCalculator={openCalculator} />
       <Gallery />
-      <Problem />
-      <Benefits />
+      <Problem onOpenCalculator={openCalculator} />
+      <Benefits onOpenCalculator={openCalculator} />
       <Priority />
       <Process />
       <Stats />
@@ -36,7 +37,7 @@ export default function Home() {
       <Services />
       <WhoWeServe />
       <Testimonials />
-      <FinalCTA onOpenCalculator={() => setIsCalculatorOpen(true)} />
+      <FinalCTA onOpenCalculator={openCalculator} />
       <Footer />
 
       {/* Floating Quote Calculator Button */}

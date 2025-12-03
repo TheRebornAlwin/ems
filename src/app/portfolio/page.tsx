@@ -10,15 +10,15 @@ import { ArrowLeft } from "lucide-react";
 const portfolioImages = [
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60BZnq0vDyND6V4kTR1Csjx2dmiMWqHIegoJhZ",
-    title: "Premium Electrical Installation",
+    title: "Premium Outdoor Electrical Installation",
     category: "Featured Project",
-    description: "High-end electrical system installation and design"
+    description: "High-end outdoor electrical system design and installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
-    title: "Full Rewire - Cardiff Property",
-    category: "Residential Rewire",
-    description: "Complete electrical rewire of 3-bedroom terraced home"
+    title: "Entire Lighting System, Cardiff Restaurant",
+    category: "Commercial Lighting",
+    description: "Complete restaurant lighting installation and design"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
@@ -34,74 +34,74 @@ const portfolioImages = [
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60cj9LxGdKfwc6Nb9T5gEotSPRvGW0Ad73yphm",
-    title: "Commercial Rewire",
-    category: "Commercial",
-    description: "Office space electrical installation"
+    title: "Security Camera Installation",
+    category: "Security Systems",
+    description: "Professional CCTV camera system installation and setup"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TcbM8QjcPN9SbhB7l5xKRsGCdfQkI4iEoXzU",
-    title: "Property Management Contract",
-    category: "Commercial",
-    description: "Ongoing electrical maintenance for rental properties"
+    title: "Complete Security Camera System",
+    category: "Commercial Security",
+    description: "Multi-camera security system for commercial property"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Yw3OTLbFJWghNpkz60GSmELv43BZaxPTbOY9",
-    title: "Contractor Partnership",
-    category: "Commercial",
-    description: "Electrical work for building contractor projects"
+    title: "Electrical Contractor Partnership",
+    category: "Commercial Project",
+    description: "Full electrical installation for construction project"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60hOvBtrLAy6MtmUzvi7PulTVk0ces52KGr38W",
-    title: "Business Premises",
-    category: "Commercial",
-    description: "Complete electrical installation for retail unit"
+    title: "Residential Home Wiring",
+    category: "Residential",
+    description: "Complete home electrical wiring and installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60ACo2BUu6vBOD2kIYPFmf8ijxtg3wUrzNuscd",
-    title: "Development Project",
-    category: "New Build",
-    description: "Multi-property development electrical package"
+    title: "Residential Home Heating Installation",
+    category: "Heating System",
+    description: "Electric heating system installation for modern home"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo609iTzfXmkOo60mSgwsLubYaVHUeZBvyD9TdWx",
-    title: "Electrical Services",
-    category: "Residential",
-    description: "Complete rewire with modern lighting installation"
+    title: "Living Room Lighting Complete Remodel",
+    category: "Interior Lighting",
+    description: "Comprehensive lighting redesign and installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60CrXzVHcJLPhNHXvVfli0bup5A9KFU1RQTnSB",
-    title: "Heating System Integration",
-    category: "Heating",
-    description: "Electrical work for heating system installation"
+    title: "Residential Electrical System",
+    category: "Home Rewire",
+    description: "Complete residential electrical system upgrade"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60IV8nwCrUme9n3IMloYrzjcukxpAQTqKS6BFE",
-    title: "Fire Alarms & CCTV",
-    category: "Security",
-    description: "Complete fire alarm and CCTV system installation"
+    title: "Central Heating System Installation",
+    category: "Heating Services",
+    description: "Full central heating electrical installation and setup"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60gR0JY6ZV8TSw3Eq65OlbXHWjfmkQ9uxopDJr",
-    title: "Facilities Maintenance Contract",
-    category: "Maintenance",
-    description: "Ongoing electrical maintenance for commercial building"
+    title: "Underfloor Heating Installation",
+    category: "Heating System",
+    description: "Electric underfloor heating system installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60xk9K7MpbwZdqn2FJsDOBrP7V69upi0Sv18Km",
-    title: "Renovation Project",
-    category: "Renovation",
-    description: "Full electrical rewire as part of home renovation"
+    title: "EV Charger Installation",
+    category: "Electric Vehicle Charging",
+    description: "Home EV charging point installation and setup"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60wHmY5j1kL4NEROP5ZXCK30ltHfqmDgjdcnyB",
-    title: "Extension Electrical Work",
-    category: "Extension",
-    description: "New electrical installation for home extension"
+    title: "Office Lighting Installation",
+    category: "Commercial Lighting",
+    description: "Professional office lighting system design and installation"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L5YDEnqi0LIztSgi7JQ9OW4xouMKaepnsh6G",
     title: "Modern Kitchen Installation",
-    category: "Kitchen",
+    category: "Kitchen Electrical",
     description: "Electrical work for complete kitchen renovation"
   },
 ];

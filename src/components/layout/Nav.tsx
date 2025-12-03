@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, X, Menu } from "lucide-react";
 import Image from "next/image";
@@ -9,11 +10,14 @@ import Image from "next/image";
 const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#services", label: "Services" },
+  { href: "/about", label: "About Us" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "#reviews", label: "Reviews" },
 ];
 
 export function Nav() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -63,8 +67,8 @@ export function Nav() {
         transition={{ duration: 0.15 }}
         className="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300"
         style={{
-          backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+          backgroundColor: isHomePage ? (isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent') : 'rgba(0, 0, 0, 0.95)',
+          backdropFilter: isHomePage ? (isScrolled ? 'blur(10px)' : 'none') : 'blur(10px)',
         }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between">
