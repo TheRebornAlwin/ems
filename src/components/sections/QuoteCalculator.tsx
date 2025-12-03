@@ -305,112 +305,177 @@ export function QuoteCalculator({ isOpen, onClose }: QuoteCalculatorProps) {
           ) : (
             /* Results */
             <div className="text-center">
-              <div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
-                style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-              >
-                <Calculator size={32} className="text-white" />
-              </div>
+              {answers.serviceType === "other" ? (
+                // Custom message for "Other" option
+                <>
+                  <div
+                    className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+                    style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                  >
+                    <Phone size={32} className="text-white" />
+                  </div>
 
-              <h3
-                className="text-2xl font-bold mb-2"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                Your Estimated Quote
-              </h3>
+                  <h3
+                    className="text-2xl font-bold mb-4"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Let's Discuss Your Project
+                  </h3>
 
-              <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Based on your answers, here's your estimated price range:
-              </p>
+                  <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    For your specific project, please give us a call to discuss an estimated quote or ask any questions.
+                  </p>
 
-              <div
-                className="text-5xl font-bold mb-2"
-                style={{ color: 'var(--gold-24k)' }}
-              >
-                £{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}
-              </div>
-
-              <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
-                *Final price may vary based on specific requirements
-              </p>
-
-              {/* Competitor Pricing Comparison */}
-              <div className="mb-8 p-6 rounded-2xl" style={{ background: 'var(--canvas-cream)' }}>
-                <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                  ElectroMain vs Competitors
-                </h4>
-
-                <div className="space-y-3 text-left">
-                  {/* ElectroMain */}
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <div
-                        className="h-5 w-5 rounded-full flex items-center justify-center"
-                        style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-                      >
-                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
+                  {customService && (
+                    <div className="mb-8 p-6 rounded-2xl text-left" style={{ background: 'var(--canvas-cream)' }}>
+                      <p className="text-sm font-medium mb-2" style={{ color: 'var(--text-muted)' }}>
+                        Your service request:
+                      </p>
+                      <p className="text-base font-semibold" style={{ color: 'var(--text-primary)' }}>
+                        {customService}
+                      </p>
                     </div>
-                    <div>
-                      <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        ElectroMain
-                      </p>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        <strong>£{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}</strong> all-inclusive. No hidden fees, no surprises. Includes materials, labor, certification, and 5-year guarantee.
-                      </p>
+                  )}
+
+                  <div className="flex flex-col items-center gap-3">
+                    <a
+                      href="tel:02922402640"
+                      className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-all hover:opacity-90"
+                      style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                    >
+                      <Phone size={18} />
+                      Call to Discuss: 02922 402640
+                    </a>
+
+                    <a
+                      href="mailto:info@electro-main.com"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
+                      style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
+                    >
+                      <Mail size={18} />
+                      Email Us
+                    </a>
+
+                    <button
+                      onClick={reset}
+                      className="w-full rounded-full px-6 py-3 font-semibold transition-all hover:bg-gray-100"
+                      style={{ color: 'var(--text-muted)' }}
+                    >
+                      Start Over
+                    </button>
+                  </div>
+                </>
+              ) : (
+                // Normal price estimate for standard services
+                <>
+                  <div
+                    className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
+                    style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                  >
+                    <Calculator size={32} className="text-white" />
+                  </div>
+
+                  <h3
+                    className="text-2xl font-bold mb-2"
+                    style={{ color: 'var(--text-primary)' }}
+                  >
+                    Your Estimated Quote
+                  </h3>
+
+                  <p className="mb-6" style={{ color: 'var(--text-secondary)' }}>
+                    Based on your answers, here's your estimated price range:
+                  </p>
+
+                  <div
+                    className="text-5xl font-bold mb-2"
+                    style={{ color: 'var(--gold-24k)' }}
+                  >
+                    £{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}
+                  </div>
+
+                  <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
+                    *Final price may vary based on specific requirements
+                  </p>
+
+                  {/* Competitor Pricing Comparison */}
+                  <div className="mb-8 p-6 rounded-2xl" style={{ background: 'var(--canvas-cream)' }}>
+                    <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+                      ElectroMain vs Competitors
+                    </h4>
+
+                    <div className="space-y-3 text-left">
+                      {/* ElectroMain */}
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div
+                            className="h-5 w-5 rounded-full flex items-center justify-center"
+                            style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                          >
+                            <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                            ElectroMain
+                          </p>
+                          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                            <strong>£{calculateEstimate().low.toLocaleString()} - £{calculateEstimate().high.toLocaleString()}</strong> all-inclusive. No hidden fees, no surprises. Includes materials, labor, certification, and 5-year guarantee.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Typical Competitors */}
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="h-5 w-5 rounded-full bg-red-100 flex items-center justify-center">
+                            <svg className="h-3 w-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
+                            Typical Competitors
+                          </p>
+                          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                            Quotes close to our price <strong>£{Math.round(calculateEstimate().low * 0.95).toLocaleString()}</strong>, then adds: "site visit fee" (+£150), "materials markup" (+£{Math.round(calculateEstimate().low * 0.2).toLocaleString()}), "unexpected complications" (+£500-£800), "certification fee" (+£200). <strong>Final total: £{Math.round(calculateEstimate().low * 0.95 + 150 + calculateEstimate().low * 0.2 + 650 + 200).toLocaleString()}+</strong>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Typical Competitors */}
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="h-5 w-5 rounded-full bg-red-100 flex items-center justify-center">
-                        <svg className="h-3 w-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
-                        Typical Competitors
-                      </p>
-                      <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        Quotes close to our price <strong>£{Math.round(calculateEstimate().low * 0.95).toLocaleString()}</strong>, then adds: "site visit fee" (+£150), "materials markup" (+£{Math.round(calculateEstimate().low * 0.2).toLocaleString()}), "unexpected complications" (+£500-£800), "certification fee" (+£200). <strong>Final total: £{Math.round(calculateEstimate().low * 0.95 + 150 + calculateEstimate().low * 0.2 + 650 + 200).toLocaleString()}+</strong>
-                      </p>
-                    </div>
+                  <div className="flex flex-col items-center gap-3">
+                    <a
+                      href="tel:02922402640"
+                      className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-all hover:opacity-90"
+                      style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
+                    >
+                      <Phone size={18} />
+                      Call to Discuss: 02922 402640
+                    </a>
+
+                    <a
+                      href="mailto:info@electro-main.com"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
+                      style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
+                    >
+                      <Mail size={18} />
+                      Email Us
+                    </a>
+
+                    <button
+                      onClick={reset}
+                      className="w-full rounded-full px-6 py-3 font-semibold transition-all hover:bg-gray-100"
+                      style={{ color: 'var(--text-muted)' }}
+                    >
+                      Start Over
+                    </button>
                   </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center gap-3">
-                <a
-                  href="tel:02922402640"
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-all hover:opacity-90"
-                  style={{ background: 'linear-gradient(135deg, var(--gold-24k), var(--amber-fire))' }}
-                >
-                  <Phone size={18} />
-                  Call to Discuss: 02922 402640
-                </a>
-
-                <a
-                  href="mailto:info@electro-main.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition-all hover:bg-gray-50"
-                  style={{ borderColor: 'var(--gold-24k)', color: 'var(--text-primary)' }}
-                >
-                  <Mail size={18} />
-                  Email Us
-                </a>
-
-                <button
-                  onClick={reset}
-                  className="w-full rounded-full px-6 py-3 font-semibold transition-all hover:bg-gray-100"
-                  style={{ color: 'var(--text-muted)' }}
-                >
-                  Start Over
-                </button>
-              </div>
+                </>
+              )}
             </div>
           )}
         </motion.div>
