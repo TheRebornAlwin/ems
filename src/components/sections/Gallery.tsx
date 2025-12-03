@@ -4,13 +4,23 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-// Preview gallery images - Portfolio showcase: images #1, #3, #8, #15
+// Preview gallery images - Portfolio showcase: images #1, #2, #3, #3, #8, #15
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60BZnq0vDyND6V4kTR1Csjx2dmiMWqHIegoJhZ",
     title: "Premium Electrical Installation",
     category: "Featured Project"
+  },
+  {
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
+    title: "Full Rewire - Cardiff Property",
+    category: "Residential Rewire"
+  },
+  {
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
+    title: "Consumer Unit Upgrade",
+    category: "Electrical Upgrade"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo606Lyzr2VjphHW2Ux8KBC7G0tONikAyRTegflu",
@@ -44,7 +54,7 @@ export function Gallery() {
             className="text-4xl font-bold md:text-5xl mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
-            Our <span className="text-molten-gold">Work Gallery</span>
+            See Us <span className="text-molten-gold">In Action</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)' }}>
             See the quality and precision of our electrical installations
