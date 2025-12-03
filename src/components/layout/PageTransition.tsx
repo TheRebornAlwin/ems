@@ -24,8 +24,8 @@ export function PageTransition({ children }: PageTransitionProps) {
           setTimeout(scrollToHash, 100);
         }
       };
-      // Wait for AnimatePresence transition to complete (100ms exit + 100ms enter) + buffer
-      setTimeout(scrollToHash, 300);
+      // Wait for AnimatePresence transition to complete + buffer
+      setTimeout(scrollToHash, 400);
     } else {
       window.scrollTo(0, 0);
     }
@@ -36,7 +36,7 @@ export function PageTransition({ children }: PageTransitionProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.1, ease: "easeInOut" }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
     >
       {children}
     </motion.div>
