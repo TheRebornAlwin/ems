@@ -87,16 +87,23 @@ export function Nav() {
 
           {/* Nav Links */}
           <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onMouseEnter={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
-                className="text-sm font-medium text-white/90 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              // For hash links, check if we're on homepage
+              const isHashLink = link.href.startsWith('#');
+              const needsHomeNavigation = isHashLink && !isHomePage;
+              const finalHref = needsHomeNavigation ? `/${link.href}` : link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={finalHref}
+                  onMouseEnter={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
+                  className="text-sm font-medium text-white/90 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
@@ -155,23 +162,30 @@ export function Nav() {
 
               {/* Navigation Links */}
               <div className="flex flex-col gap-3 mt-12">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      onTouchStart={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
-                      className="block text-xl font-semibold text-white py-2"
+                {navLinks.map((link, i) => {
+                  // For hash links, check if we're on homepage
+                  const isHashLink = link.href.startsWith('#');
+                  const needsHomeNavigation = isHashLink && !isHomePage;
+                  const finalHref = needsHomeNavigation ? `/${link.href}` : link.href;
+
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={finalHref}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        onTouchStart={link.href === "/portfolio" ? prefetchPortfolioImages : undefined}
+                        className="block text-xl font-semibold text-white py-2"
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
 
               {/* CTA Buttons */}

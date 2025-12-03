@@ -78,7 +78,7 @@ export default function AboutPage() {
               Back to Home
             </Link>
 
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <h1
                 className="text-5xl font-bold md:text-6xl mb-6 leading-tight"
                 style={{ color: 'var(--text-primary)' }}

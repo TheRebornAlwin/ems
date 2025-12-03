@@ -11,14 +11,23 @@ interface PageTransitionProps {
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
 
-  // Scroll to top on page change
+  // Scroll to top on page change, or to hash if present
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      // Wait for page to render, then scroll to hash
+      setTimeout(() => {
+        const element = document.querySelector(window.location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [pathname]);
 
   return (
     <motion.div
-      key={pathname}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
