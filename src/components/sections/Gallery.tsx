@@ -8,33 +8,33 @@ import { ArrowRight } from "lucide-react";
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&h=600&fit=crop&q=80",
-    title: "Modern Consumer Unit Installation",
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
+    title: "Full Rewire - Cardiff Property",
+    category: "Residential Rewire"
+  },
+  {
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
+    title: "Consumer Unit Upgrade",
     category: "Electrical Upgrade"
   },
   {
-    url: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=600&fit=crop&q=80",
-    title: "Professional Panel Wiring",
-    category: "Commercial Installation"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo606Lyzr2VjphHW2Ux8KBC7G0tONikAyRTegflu",
+    title: "Residential Installation",
+    category: "New Installation"
   },
   {
-    url: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&h=600&fit=crop&q=80",
-    title: "Industrial Circuit Installation",
-    category: "Industrial"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60cj9LxGdKfwc6Nb9T5gEotSPRvGW0Ad73yphm",
+    title: "Commercial Rewire",
+    category: "Commercial"
   },
   {
-    url: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600&h=600&fit=crop&q=80",
-    title: "Electrical Safety Inspection",
-    category: "Testing & Certification"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TcbM8QjcPN9SbhB7l5xKRsGCdfQkI4iEoXzU",
+    title: "Property Management Contract",
+    category: "Commercial"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905252189-08b45d6a269e?w=600&h=600&fit=crop&q=80",
-    title: "Complete Home Rewire",
-    category: "Residential"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=600&fit=crop&q=80",
-    title: "Commercial Electrical Systems",
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Yw3OTLbFJWghNpkz60GSmELv43BZaxPTbOY9",
+    title: "Contractor Partnership",
     category: "Commercial"
   },
 ];

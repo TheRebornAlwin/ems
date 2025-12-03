@@ -31,10 +31,10 @@ export function Nav() {
     if (typeof window === 'undefined') return;
 
     const imagesToPreload = [
-      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
-      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
-      "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=400&h=400&fit=crop&q=75&fm=webp&auto=format",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo606Lyzr2VjphHW2Ux8KBC7G0tONikAyRTegflu",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60cj9LxGdKfwc6Nb9T5gEotSPRvGW0Ad73yphm",
     ];
 
     imagesToPreload.forEach(url => {
