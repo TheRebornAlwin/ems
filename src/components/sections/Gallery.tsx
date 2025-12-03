@@ -4,18 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-// Preview gallery images - showing first 6 projects
+// Preview gallery images - Portfolio showcase: images #1, #3, #8, #15
 // Full portfolio available at /portfolio
 const galleryPreview = [
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
-    title: "Full Rewire - Cardiff Property",
-    category: "Residential Rewire"
-  },
-  {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
-    title: "Consumer Unit Upgrade",
-    category: "Electrical Upgrade"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60BZnq0vDyND6V4kTR1Csjx2dmiMWqHIegoJhZ",
+    title: "Premium Electrical Installation",
+    category: "Featured Project"
   },
   {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo606Lyzr2VjphHW2Ux8KBC7G0tONikAyRTegflu",
@@ -23,19 +18,14 @@ const galleryPreview = [
     category: "New Installation"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60cj9LxGdKfwc6Nb9T5gEotSPRvGW0Ad73yphm",
-    title: "Commercial Rewire",
-    category: "Commercial"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60ACo2BUu6vBOD2kIYPFmf8ijxtg3wUrzNuscd",
+    title: "Development Project",
+    category: "New Build"
   },
   {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TcbM8QjcPN9SbhB7l5xKRsGCdfQkI4iEoXzU",
-    title: "Property Management Contract",
-    category: "Commercial"
-  },
-  {
-    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Yw3OTLbFJWghNpkz60GSmELv43BZaxPTbOY9",
-    title: "Contractor Partnership",
-    category: "Commercial"
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L5YDEnqi0LIztSgi7JQ9OW4xouMKaepnsh6G",
+    title: "Modern Kitchen Installation",
+    category: "Kitchen"
   },
 ];
 

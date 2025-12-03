@@ -30,11 +30,20 @@ export function Nav() {
   const prefetchPortfolioImages = () => {
     if (typeof window === 'undefined') return;
 
+    // Prefetch first 12 images for much faster perceived loading
     const imagesToPreload = [
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60BZnq0vDyND6V4kTR1Csjx2dmiMWqHIegoJhZ",
       "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
       "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60L52Mvri0LIztSgi7JQ9OW4xouMKaepnsh6GU",
       "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo606Lyzr2VjphHW2Ux8KBC7G0tONikAyRTegflu",
       "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60cj9LxGdKfwc6Nb9T5gEotSPRvGW0Ad73yphm",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60TcbM8QjcPN9SbhB7l5xKRsGCdfQkI4iEoXzU",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Yw3OTLbFJWghNpkz60GSmELv43BZaxPTbOY9",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60hOvBtrLAy6MtmUzvi7PulTVk0ces52KGr38W",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60ACo2BUu6vBOD2kIYPFmf8ijxtg3wUrzNuscd",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo609iTzfXmkOo60mSgwsLubYaVHUeZBvyD9TdWx",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60CrXzVHcJLPhNHXvVfli0bup5A9KFU1RQTnSB",
+      "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60IV8nwCrUme9n3IMloYrzjcukxpAQTqKS6BFE",
     ];
 
     imagesToPreload.forEach(url => {

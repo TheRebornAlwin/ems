@@ -9,6 +9,12 @@ import { ArrowLeft } from "lucide-react";
 // Portfolio gallery images - Real client project photos
 const portfolioImages = [
   {
+    url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60BZnq0vDyND6V4kTR1Csjx2dmiMWqHIegoJhZ",
+    title: "Premium Electrical Installation",
+    category: "Featured Project",
+    description: "High-end electrical system installation and design"
+  },
+  {
     url: "https://suenwj7f98.ufs.sh/f/9KZEt2mkOo60Ny12ben9wqPSgCIkYzDKyO3ob2TiJuWdeZHG",
     title: "Full Rewire - Cardiff Property",
     category: "Residential Rewire",
@@ -117,22 +123,15 @@ export default function PortfolioPage() {
             </Link>
 
             <h1
-              className="text-4xl font-bold md:text-5xl mb-4"
+              className="text-4xl font-bold md:text-5xl mb-4 text-center"
               style={{ color: 'var(--text-primary)' }}
             >
               Our <span className="text-molten-gold">Portfolio</span>
             </h1>
 
-            <p className="text-lg mb-12" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg mb-12 text-center" style={{ color: 'var(--text-secondary)' }}>
               Explore our completed rewire projects across South Wales. From residential homes to commercial properties, see the quality and precision of our work.
             </p>
-
-            {/* Note about real photos */}
-            <div className="mb-12 p-6 rounded-2xl" style={{ background: 'var(--canvas-cream)' }}>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                <strong style={{ color: 'var(--gold-24k)' }}>Note:</strong> Real client project photos coming soon. These placeholders will be replaced with before/after transformations, detailed case studies, and testimonials from actual rewire clients.
-              </p>
-            </div>
 
             {/* Portfolio Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -146,8 +145,8 @@ export default function PortfolioPage() {
                     <img
                       src={project.url}
                       alt={project.title}
-                      loading={i < 4 ? "eager" : "lazy"}
-                      fetchPriority={i < 4 ? "high" : "auto"}
+                      loading={i < 12 ? "eager" : "lazy"}
+                      fetchPriority={i < 8 ? "high" : "auto"}
                       decoding="async"
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
