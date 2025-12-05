@@ -20,30 +20,15 @@ export function Nav() {
   const isHomePage = pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hasHash, setHasHash] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Check for hash in URL
-    const checkHash = () => {
-      setHasHash(!!window.location.hash);
-    };
-
-    // Initial checks
-    handleScroll();
-    checkHash();
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("hashchange", checkHash);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("hashchange", checkHash);
-    };
-  }, [pathname]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prefetch portfolio images on hover for instant loading
   const prefetchPortfolioImages = () => {
@@ -82,8 +67,8 @@ export function Nav() {
         transition={{ duration: 0.15 }}
         className="fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-300"
         style={{
-          backgroundColor: isHomePage ? ((isScrolled || hasHash) ? 'rgba(0, 0, 0, 0.95)' : 'transparent') : 'rgba(0, 0, 0, 0.95)',
-          backdropFilter: isHomePage ? ((isScrolled || hasHash) ? 'blur(10px)' : 'none') : 'blur(10px)',
+          backgroundColor: isHomePage ? (isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'transparent') : 'rgba(0, 0, 0, 0.95)',
+          backdropFilter: isHomePage ? (isScrolled ? 'blur(10px)' : 'none') : 'blur(10px)',
         }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between">

@@ -10,6 +10,12 @@ interface PageTransitionProps {
 
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
+  const [hasHash, setHasHash] = useState(false);
+
+  // Check if navigating with hash
+  useEffect(() => {
+    setHasHash(!!window.location.hash);
+  }, [pathname]);
 
   // Scroll to hash or top
   useEffect(() => {
@@ -31,15 +37,12 @@ export function PageTransition({ children }: PageTransitionProps) {
     }
   }, [pathname]);
 
-  // Check if current URL has hash for instant display
-  const hasHash = typeof window !== 'undefined' && window.location.hash;
-
   // Skip transition for hash navigation to prevent white screen
   return (
     <motion.div
       initial={{ opacity: hasHash ? 1 : 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: hasHash ? 1 : 0 }}
       transition={{ duration: hasHash ? 0 : 0.2, ease: "easeInOut" }}
     >
       {children}
